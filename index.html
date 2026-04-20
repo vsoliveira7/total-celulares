@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Celulares | Especialista em iPhone, Xiaomi e Realme em SP</title>
+    <meta name="description" content="Total Celulares - A melhor loja de iPhones novos e seminovos, Xiaomi e Realme na 25 de Março, São Paulo. Troca inteligente e acessórios premium.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container nav-container">
+            <nav>
+                <a href="#" class="logo">
+                    <img src="img/logo.png" alt="Logo Total Celulares">
+                    TOTAL<span> CELULARES</span>
+                </a>
+                
+                <ul class="nav-links">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#depoimentos">Feedbacks</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="container" style="display: flex; align-items: center; width: 100%;">
+            <div class="hero-content" data-reveal>
+                <h1>TOTAL<br><span>CELULARES</span></h1>
+                <p>Especialistas em Apple e multimarcas. Assistência técnica premium, acessórios e os melhores aparelhos do mercado em um só lugar.</p>
+                <div class="hero-btns">
+                    <a href="#catalogo" class="btn btn-primary">Ver Catálogo</a>
+                    <a href="https://wa.me/5511962139011" class="btn btn-outline" target="_blank">Falar com Vendedor</a>
+                </div>
+            </div>
+            <div class="hero-image" data-reveal>
+                <img src="img/hero.png" alt="Total Celulares Premium Hero">
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+    <!-- Catálogo -->
+    <section id="catalogo">
+        <div class="container">
+            <div class="section-title" data-reveal>
+                <h2>Catálogo <span>Total</span></h2>
+                <div class="underline"></div>
+                <p class="section-subtitle">Deslize para ver nossos modelos que trabalhamos</p>
+            </div>
+
+            <div class="catalog-tabs">
+                <button class="catalog-tab active" onclick="switchCarousel('apple')">Apple</button>
+                <button class="catalog-tab" onclick="switchCarousel('xiaomi')">Xiaomi</button>
+                <button class="catalog-tab" onclick="switchCarousel('poco')">POCO</button>
+                <button class="catalog-tab" onclick="switchCarousel('realme')">Realme</button>
+            </div>
+
+            <!-- Apple Carousel -->
+            <div id="carousel-apple" class="carousel-wrapper active">
+                <div class="nav-arrow nav-prev" onclick="scrollCarousel('carousel-apple', -340)"><i class="fas fa-chevron-left"></i></div>
+                <div class="nav-arrow nav-next" onclick="scrollCarousel('carousel-apple', 340)"><i class="fas fa-chevron-right"></i></div>
+                <div class="carousel-container">
+                    <!-- iPhone 17 Pro Max -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-blue">
+                            <img src="img/products/apple/Iphone 17 Pro Max - Azul-intenso.png" alt="iPhone 17 Pro Max">
+                        </div>
+                        <div class="card-info-wrap">
+                             <div class="color-dots">
+                                <div class="color-dot" style="background: #e6a673;" onclick="changeProductColor(this, 'img/products/apple/Iphone 17 Pro Max - Prateado.png', 'bg-orange', 'Laranja Cósmico')"></div>
+                                <div class="color-dot" style="background: #d1d1d1;" onclick="changeProductColor(this, 'img/products/apple/Iphone 17 Pro Max - Laranja-cósmico.png', 'bg-gray', 'Prateado')"></div>
+                                <div class="color-dot" style="background: #2b3a4a;" onclick="changeProductColor(this, 'img/products/apple/Iphone 17 Pro Max - Azul-intenso.png', 'bg-blue', 'Azul Intenso')"></div>
+                            </div>
+                            <h3 class="card-title">iPhone 17 Pro Max</h3>
+                            <p class="card-tagline">Chip A19 Pro. Resfriamento por Câmara de Vapor.</p>
+                            <p class="card-specs">256GB a 2TB | 12GB RAM | Azul Intenso</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511962139011" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- iPhone 17 Pro -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-blue">
+                            <img src="img/products/apple/Iphone 17 Pro Max - Azul-intenso.png" alt="iPhone 17 Pro">
+                        </div>
+                        <div class="card-info-wrap">
+                             <div class="color-dots">
+                                <div class="color-dot" style="background: #2b3a4a;" onclick="changeProductColor(this, 'img/products/apple/Iphone 17 Pro Max - Azul-intenso.png', 'bg-blue', 'Azul Intenso')"></div>
+                                <div class="color-dot" style="background: #e6a673;" onclick="changeProductColor(this, 'img/products/apple/Iphone 17 Pro Max - Prateado.png', 'bg-orange', 'Laranja Cósmico')"></div>
+                                <div class="color-dot" style="background: #d1d1d1;" onclick="changeProductColor(this, 'img/products/apple/Iphone 17 Pro Max - Laranja-cósmico.png', 'bg-gray', 'Prateado')"></div>
+                            </div>
+                            <h3 class="card-title">iPhone 17 Pro</h3>
+                            <p class="card-tagline">Titânio e Alumínio Unibody. Performance Extrema.</p>
+                            <p class="card-specs">128GB a 1TB | 12GB RAM | Azul Intenso</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511962139011" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- iPhone 17 -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-gray">
+                            <img src="img/products/apple/Iphone 17 - Preto.png" alt="iPhone 17">
+                        </div>
+                        <div class="card-info-wrap">
+                            <div class="color-dots">
+                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/Iphone 17 - Preto.png', 'bg-gray', 'Preto')"></div>
+                                <div class="color-dot" style="background: #ffffff;" onclick="changeProductColor(this, 'img/products/apple/Iphone 17 - Branco.png', 'bg-teal', 'Branco')"></div>
+                                <div class="color-dot" style="background: #a7c1e3;" onclick="changeProductColor(this, 'img/products/apple/Iphone 17 - Azul-névoa.png', 'bg-blue', 'Azul Névoa')"></div>
+                            </div>
+                            <h3 class="card-title">iPhone 17</h3>
+                            <p class="card-tagline">Super Retina XDR de 3.000 nits. Brilho cósmico.</p>
+                            <p class="card-specs">128GB a 512GB | Wi-Fi 7 | Preto</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511962139011" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- iPhone 16 Pro -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-gray">
+                            <img src="img/products/apple/Iphone 16 Pro - Titânio natural.png" alt="iPhone 16 Pro">
+                        </div>
+                        <div class="card-info-wrap">
+                            <div class="color-dots">
+                                <div class="color-dot" style="background: #bab5a8;" onclick="changeProductColor(this, 'img/products/apple/Iphone 16 Pro - Titânio natural.png', 'bg-gray', 'Titânio Natural')"></div>
+                                <div class="color-dot" style="background: #f5f5f0;" onclick="changeProductColor(this, 'img/products/apple/Iphone 16 Pro - Titânio branco.png', 'bg-teal', 'Titânio Branco')"></div>
+                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/Iphone 16 Pro - Titânio preto.png', 'bg-gray', 'Titânio Preto')"></div>
+                            </div>
+                            <h3 class="card-title">iPhone 16 Pro</h3>
+                            <p class="card-tagline">Design de Titânio. Performance de elite.</p>
+                            <p class="card-specs">128GB a 1TB | Titânio Natural</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511962139011" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- iPhone 16 Plus -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-blue">
+                            <img src="img/products/apple/Iphone 16 Plus - Ultramarino.png" alt="iPhone 16 Plus">
+                        </div>
+                        <div class="card-info-wrap">
+                            <div class="color-dots">
+                                <div class="color-dot" style="background: #4b7095;" onclick="changeProductColor(this, 'img/products/apple/Iphone 16 Plus - Ultramarino.png', 'bg-blue', 'Ultramarino')"></div>
+                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/Iphone 16 Plus - Preto.png', 'bg-gray', 'Preto')"></div>
+                            </div>
+                            <h3 class="card-title">iPhone 16 Plus</h3>
+                            <p class="card-tagline">Tela grande. Bateria para o dia todo.</p>
+                            <p class="card-specs">128GB a 512GB | Ultramarino</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511962139011" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+ 
+                    <!-- iPhone 16 -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-gray">
+                            <img src="img/products/apple/Iphone 16 - Preto.png" alt="iPhone 16">
+                        </div>
+                        <div class="card-info-wrap">
+                            <div class="color-dots">
+                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/Iphone 16 - Preto.png', 'bg-gray', 'Preto')"></div>
+                                <div class="color-dot" style="background: #ffffff;" onclick="changeProductColor(this, 'img/products/apple/Iphone 16 - Branco.png', 'bg-teal', 'Branco')"></div>
+                                <div class="color-dot" style="background: #4b7095;" onclick="changeProductColor(this, 'img/products/apple/Iphone 16 - Ultramarino.png', 'bg-blue', 'Ultramarino')"></div>
+                                <div class="color-dot" style="background: #8ca298;" onclick="changeProductColor(this, 'img/products/apple/Iphone 16 - Verde-acinzentado.png', 'bg-teal', 'Verde Acinzentado')"></div>
+                            </div>
+                            <h3 class="card-title">iPhone 16</h3>
+                            <p class="card-tagline">Novo Controle da Câmera. Chip A18 ultraveloz.</p>
+                            <p class="card-specs">128GB a 512GB | Preto</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511962139011" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- iPhone 16e -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-gray">
+                            <img src="img/products/apple/Iphone 16e - Preto.png" alt="iPhone 16e">
+                        </div>
+                        <div class="card-info-wrap">
+                            <div class="color-dots">
+                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/Iphone 16e - Preto.png', 'bg-gray', 'Preto')"></div>
+                                <div class="color-dot" style="background: #ffffff;" onclick="changeProductColor(this, 'img/products/apple/Iphone 16e - Branco.png', 'bg-teal', 'Branco')"></div>
+                            </div>
+                            <h3 class="card-title">iPhone 16e</h3>
+                            <p class="card-tagline">Essencialmente iPhone. Potente e acessível.</p>
+                            <p class="card-specs">128GB | Preto</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511962139011" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- iPhone 15 Pro Max -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-gray">
+                            <img src="img/products/apple/Iphone 15 Pro Max - Titânio preto.png" alt="iPhone 15 Pro Max">
+                        </div>
+                        <div class="card-info-wrap">
+                            <div class="color-dots">
+                                <div class="color-dot" style="background: #1d1d1f;"></div>
+                            </div>
+                            <h3 class="card-title">iPhone 15 Pro Max</h3>
+                            <p class="card-tagline">O gigante da geração anterior. Agora lacrado.</p>
+                            <p class="card-specs">256GB a 1TB | Titânio Preto</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511962139011" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- iPhone 15 Plus -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-gray">
+                            <img src="img/products/apple/Iphone 15 Plus - Preto.png" alt="iPhone 15 Plus">
+                        </div>
+                        <div class="card-info-wrap">
+                            <div class="color-dots">
+                                <div class="color-dot" style="background: #1d1d1f;"></div>
+                            </div>
+                            <h3 class="card-title">iPhone 15 Plus</h3>
+                            <p class="card-tagline">Tela grande. Dynamic Island. Todo em vidro.</p>
+                            <p class="card-specs">128GB a 512GB | Preto</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511962139011" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- iPhone 15 -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-gray">
+                            <img src="img/products/apple/Iphone 15 - Preto.png" alt="iPhone 15">
+                        </div>
+                        <div class="card-info-wrap">
+                            <div class="color-dots">
+                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/Iphone 15 - Preto.png', 'bg-gray', 'Preto')"></div>
+                                <div class="color-dot" style="background: #a7c1e3;" onclick="changeProductColor(this, 'img/products/apple/Iphone 15 - Azul.png', 'bg-blue', 'Azul')"></div>
+                            </div>
+                            <h3 class="card-title">iPhone 15</h3>
+                            <p class="card-tagline">Poderoso. Colorido. Pronto para tudo.</p>
+                            <p class="card-specs">128GB a 512GB | Preto</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511962139011" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- iPhone 14 -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-gray">
+                            <img src="img/products/apple/Iphone 14 - Preto.png" alt="iPhone 14">
+                        </div>
+                        <div class="card-info-wrap">
+                            <div class="color-dots">
+                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/Iphone 14 - Preto.png', 'bg-gray', 'Preto')"></div>
+                                <div class="color-dot" style="background: #a7c1e3;" onclick="changeProductColor(this, 'img/products/apple/Iphone 14 - Azul.png', 'bg-blue', 'Azul')"></div>
+                            </div>
+                            <h3 class="card-title">iPhone 14</h3>
+                            <p class="card-tagline">Clássico. Durável. Eficiente.</p>
+                            <p class="card-specs">128GB a 512GB | Preto</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511962139011" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- iPhone 13 -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-gray">
+                            <img src="img/products/apple/Iphone 13 - Meia-noite.png" alt="iPhone 13">
+                        </div>
+                        <div class="card-info-wrap">
+                            <div class="color-dots">
+                                <div class="color-dot" style="background: #1d1d1f;"></div>
+                            </div>
+                            <h3 class="card-title">iPhone 13</h3>
+                            <p class="card-tagline">Puro estilo. O melhor custo-benefício.</p>
+                            <p class="card-specs">128GB a 512GB | Meia-noite</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511962139011" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Xiaomi Carousel -->
+            <div id="carousel-xiaomi" class="carousel-wrapper">
+                <div class="nav-arrow nav-prev" onclick="scrollCarousel('carousel-xiaomi', -340)"><i class="fas fa-chevron-left"></i></div>
+                <div class="nav-arrow nav-next" onclick="scrollCarousel('carousel-xiaomi', 340)"><i class="fas fa-chevron-right"></i></div>
+                <div class="carousel-container">
+                    <!-- Redmi Note 15 Pro Plus -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-purple">
+                            <img src="img/products/xiaomi/base.png" alt="Redmi Note 15 Pro Plus">
+                        </div>
+                        <div class="card-info-wrap">
+                            <div class="color-dots">
+                                <div class="color-dot" style="background: #a291ad;"></div>
+                                <div class="color-dot" style="background: #1d1d1f;"></div>
+                            </div>
+                            <h3 class="card-title">Redmi Note 15 Pro Plus</h3>
+                            <p class="card-tagline">O ápice da linha Redmi. Câmera de 200MP e 5G.</p>
+                            <p class="card-specs">512GB | 12GB RAM | Roxa</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511962139011" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Redmi Note 15 Pro -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-blue">
+                            <img src="img/products/xiaomi/base.png" alt="Redmi Note 15 Pro" style="filter: hue-rotate(180deg);">
+                        </div>
+                        <div class="card-info-wrap">
+                            <div class="color-dots">
+                                <div class="color-dot" style="background: #1d1d1f;"></div>
+                                <div class="color-dot" style="background: #d1d1d1;"></div>
+                            </div>
+                            <h3 class="card-title">Redmi Note 15 Pro</h3>
+                            <p class="card-tagline">Equilíbrio perfeito entre potência e design.</p>
+                            <p class="card-specs">256GB e 512GB | Cinza</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511962139011" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Redmi Note 14 Pro -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-purple">
+                            <img src="img/products/xiaomi/base.png" alt="Redmi Note 14 Pro" style="filter: saturate(1.5);">
+                        </div>
+                        <div class="card-info-wrap">
+                            <div class="color-dots">
+                                <div class="color-dot" style="background: #a291ad;"></div>
+                                <div class="color-dot" style="background: #d1d1d1;"></div>
+                            </div>
+                            <h3 class="card-title">Redmi Note 14 Pro</h3>
+                            <p class="card-tagline">Resistência e beleza em um só lugar.</p>
+                            <p class="card-specs">256GB | Roxa</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511962139011" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Redmi 15 / 15C -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-teal">
+                            <img src="img/products/xiaomi/base.png" alt="Redmi 15 Series">
+                        </div>
+                        <div class="card-info-wrap">
+                            <div class="color-dots">
+                                <div class="color-dot" style="background: #1d1d1f;"></div>
+                                <div class="color-dot" style="background: #4ab6b0;"></div>
+                            </div>
+                            <h3 class="card-title">Redmi 15 / 15C</h3>
+                            <p class="card-tagline">Bateria de longa duração para o seu dia.</p>
+                            <p class="card-specs">128GB a 256GB | Preto</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511962139011" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Redmi A7 Pro / A5 -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-orange">
+                            <img src="img/products/xiaomi/base.png" alt="Redmi A Series" style="filter: hue-rotate(45deg);">
+                        </div>
+                        <div class="card-info-wrap">
+                            <div class="color-dots">
+                                <div class="color-dot" style="background: #d1d1d1;"></div>
+                                <div class="color-dot" style="background: #e6a673;"></div>
+                            </div>
+                            <h3 class="card-title">Redmi A7 / A5</h3>
+                            <p class="card-tagline">Essencial e confiável. Simplesmente o que você precisa.</p>
+                            <p class="card-specs">64GB e 128GB | Prata</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511962139011" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- POCO Carousel -->
+            <div id="carousel-poco" class="carousel-wrapper">
+                <div class="nav-arrow nav-prev" onclick="scrollCarousel('carousel-poco', -340)"><i class="fas fa-chevron-left"></i></div>
+                <div class="nav-arrow nav-next" onclick="scrollCarousel('carousel-poco', 340)"><i class="fas fa-chevron-right"></i></div>
+                <div class="carousel-container">
+                               <!-- POCO X8 Pro (Individual) -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-gray">
+                            <img src="img/products/poco/x8_pro.png" alt="POCO X8 Pro">
+                        </div>
+                        <div class="card-info-wrap">
+                            <div class="color-dots">
+                                <div class="color-dot" style="background: #1d1d1f;"></div>
+                                <div class="color-dot" style="background: #d1d1d1;"></div>
+                            </div>
+                            <h3 class="card-title">POCO X8 Pro</h3>
+                            <p class="card-tagline">Performance absurda. O novo rei do custo-benefício.</p>
+                            <p class="card-specs">256GB a 512GB | Snapdragon 8 Gen 4 | Preto</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511962139011" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- POCO X7 Pro (Individual) -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-teal">
+                            <img src="img/products/poco/base.png" alt="POCO X7 Pro" style="filter: hue-rotate(90deg);">
+                        </div>
+                        <div class="card-info-wrap">
+                            <div class="color-dots">
+                                <div class="color-dot" style="background: #4ab6b0;"></div>
+                                <div class="color-dot" style="background: #1d1d1f;"></div>
+                            </div>
+                            <h3 class="card-title">POCO X7 Pro</h3>
+                            <p class="card-tagline">Tecnologia 5G e tela AMOLED premium.</p>
+                            <p class="card-specs">256GB | 8GB RAM | Verde</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511962139011" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- POCO F Series (Individual) -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-gray">
+                            <img src="img/products/poco/base.png" alt="POCO F Series" style="filter: brightness(1.2);">
+                        </div>
+                        <div class="card-info-wrap">
+                            <div class="color-dots">
+                                <div class="color-dot" style="background: #1d1d1f;"></div>
+                            </div>
+                            <h3 class="card-title">POCO F8 / F7 Pro</h3>
+                            <p class="card-tagline">Potência de herói. Para quem não aceita menos que o topo.</p>
+                            <p class="card-specs">512GB | Performance Gaming | Preto</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511962139011" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Realme Carousel -->
+            <div id="carousel-realme" class="carousel-wrapper">
+                <div class="nav-arrow nav-prev" onclick="scrollCarousel('carousel-realme', -340)"><i class="fas fa-chevron-left"></i></div>
+                <div class="nav-arrow nav-next" onclick="scrollCarousel('carousel-realme', 340)"><i class="fas fa-chevron-right"></i></div>
+                <div class="carousel-container">
+                    <!-- Realme 14 Pro Plus (Individual) -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-orange">
+                            <img src="img/products/realme/14_pro_plus.png" alt="Realme 14 Pro Plus">
+                        </div>
+                        <div class="card-info-wrap">
+                            <div class="color-dots">
+                                <div class="color-dot" style="background: #ffc800;"></div>
+                                <div class="color-dot" style="background: #ffffff;"></div>
+                                <div class="color-dot" style="background: #1d1d1f;"></div>
+                            </div>
+                            <h3 class="card-title">Realme 14 Pro Plus</h3>
+                            <p class="card-tagline">Design inspirado em relógios de luxo. Fotografia master.</p>
+                            <p class="card-specs">512GB | 12GB RAM | Amarelo Luxo</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511962139011" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Realme C75 / C75X (Individual) -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-blue">
+                            <img src="img/products/realme/base.png" alt="Realme C75X" style="filter: hue-rotate(200deg);">
+                        </div>
+                        <div class="card-info-wrap">
+                            <div class="color-dots">
+                                <div class="color-dot" style="background: #a7c1e3;"></div>
+                                <div class="color-dot" style="background: #1d1d1f;"></div>
+                            </div>
+                            <h3 class="card-title">Realme C75 / C75X</h3>
+                            <p class="card-tagline">O campeão de durabilidade. Bateria extrema.</p>
+                            <p class="card-specs">128GB e 256GB | Azul Névoa</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511962139011" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Realme Note 70 / 60 (Individual) -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-teal">
+                            <img src="img/products/realme/base.png" alt="Realme Note Series" style="filter: hue-rotate(120deg);">
+                        </div>
+                        <div class="card-info-wrap">
+                            <div class="color-dots">
+                                <div class="color-dot" style="background: #1d1d1f;"></div>
+                                <div class="color-dot" style="background: #d1d1d1;"></div>
+                            </div>
+                            <h3 class="card-title">Realme Note 70 / 60</h3>
+                            <p class="card-tagline">Simplesmente resistente. Elegância para o dia a dia.</p>
+                            <p class="card-specs">128GB e 256GB | Preto</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511962139011" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="section-divider"></div>
+
+    <!-- Serviços -->
+    <section id="servicos">
+        <div class="container">
+            <div class="section-title" data-reveal>
+                <h2>Por que escolher a <span>Total</span>?</h2>
+                <div class="underline"></div>
+                <p class="section-subtitle">Oferecemos muito mais que apenas aparelhos. Oferecemos uma experiência completa de tecnologia, confiança e suporte especializado para o seu dia a dia.</p>
+            </div>
+
+            <div class="services-container">
+                <div class="service-item" data-reveal>
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>Troca Inteligente</h3>
+                    <p>Renove seu aparelho com a melhor avaliação de São Paulo. Aceitamos seu usado como parte do pagamento.</p>
+                </div>
+
+                <div class="service-item" data-reveal>
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Entrega Rápida</h3>
+                    <p>Receba seu novo celular com agilidade e total segurança. Frete expresso disponível para toda a região.</p>
+                </div>
+
+                <div class="service-item" data-reveal>
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Garantia de Qualidade</h3>
+                    <p>Todos os aparelhos possuem garantia total e procedência garantida. Sua tranquilidade é nossa prioridade.</p>
+                </div>
+
+                <div class="service-item" data-reveal>
+                    <i class="fas fa-headset"></i>
+                    <h3>Suporte Especializado</h3>
+                    <p>Nossa equipe está pronta para auxiliar no pós-venda, ajudando na configuração e dúvidas do seu novo dispositivo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+    <!-- Depoimentos (Feedbacks) -->
+    <section id="depoimentos">
+        <div class="container">
+            <div class="section-title" data-reveal>
+                <h2>O que dizem nossos <span>Clientes</span></h2>
+                <div class="underline"></div>
+                <p class="section-subtitle">A satisfação dos nossos clientes é o que nos move. Confira os depoimentos de quem já garantiu seu novo aparelho com a Total Celulares.</p>
+            </div>
+
+            <div class="feedback-carousel-wrapper">
+                <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="feedback-container">
+                    <!-- Feedback 1 -->
+                    <div class="feedback-card" data-reveal>
+                        <div class="feedback-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="feedback-text">"Simplesmente apaixonada pelo meu iPhone 17 Lilás! 😍 Saí de um Moto G22 e o salto de qualidade foi absurdo. Valeu Total Celulares pelo atendimento e por me ajudarem nessa conquista! 💜✨"</p>
+                        <div class="feedback-user">
+                            <img src="img/feedbacks/feedback_1.png" alt="Cliente iPhone Roxo">
+                            <div class="feedback-info"><h4>Julia Soares</h4><p>Compra: iPhone 17 Lilás</p></div>
+                        </div>
+                    </div>
+
+                    <!-- Feedback 2 -->
+                    <div class="feedback-card" data-reveal>
+                        <div class="feedback-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="feedback-text">"Minha nave nova chegou! 🚀 O Redmi Note 14 Pro Roxo com 512GB é sensacional. O atendimento da Total foi top demais, super ágeis na entrega. Recomendo muito! 💜🔋"</p>
+                        <div class="feedback-user">
+                            <img src="img/feedbacks/feedback_2.png" alt="Cliente iPad Melzinha">
+                            <div class="feedback-info"><h4>Ana Silveira</h4><p>Compra: Redmi Note 14 Pro</p></div>
+                        </div>
+                    </div>
+
+                    <!-- Feedback 3 -->
+                    <div class="feedback-card" data-reveal>
+                        <div class="feedback-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="feedback-text">"A emoção de poder dar o melhor pros nossos filhos não tem preço! 🥹 Comprei o presente dele na Total e foi tudo perfeito. Sdd de quando ele pedia carrinhos, agora já tá de Redmi 14C novo! ❤️🙏"</p>
+                        <div class="feedback-user">
+                            <img src="img/feedbacks/feedback_3.png" alt="Cliente Redmi Note Roxo">
+                            <div class="feedback-info"><h4>Luana Oliveira</h4><p>Compra: Redmi 14C</p></div>
+                        </div>
+                    </div>
+
+                    <!-- Feedback 4 -->
+                    <div class="feedback-card" data-reveal>
+                        <div class="feedback-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="feedback-text">"Finalmente o iPad Air da família chegou! 🍎✨ Vai ajudar muito nos estudos das crianças e na nossa diversão. Atendimento nota 10, a Total Celulares é de confiança mesmo! 👨‍👩‍👧‍👦"</p>
+                        <div class="feedback-user">
+                            <img src="img/feedbacks/feedback_4.png" alt="Cliente Kids Redmi">
+                            <div class="feedback-info"><h4>Amanda Costa</h4><p>Compra: iPad Air</p></div>
+                        </div>
+                    </div>
+
+                    <!-- Feedback 5 -->
+                    <div class="feedback-card" data-reveal>
+                        <div class="feedback-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="feedback-text">"Dia de upgrade por aqui! 😎 Troquei meu 16 Pro pelo 17 Pro Max na Total e tô sem palavras. O aparelho é uma máquina e o negócio foi super justo. Valeu pela parceria de sempre! 🔥🖤"</p>
+                        <div class="feedback-user">
+                            <img src="img/feedbacks/feedback_5.png" alt="Cliente iPhone Orange">
+                            <div class="feedback-info"><h4>Marcos Souza</h4><p>Compra: iPhone 17 Pro Max</p></div>
+                        </div>
+                    </div>
+
+                    <!-- Feedback 6 (Mantido) -->
+                    <div class="feedback-card" data-reveal>
+                        <div class="feedback-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="feedback-text">"Estou muito feliz com meu novo iPhone! 😊 O atendimento da Total foi maravilhoso, me senti muito segura em fazer a troca aqui. Obrigada por me ajudarem! Um beijão pra equipe! ❤️🙏"</p>
+                        <div class="feedback-user">
+                            <img src="img/feedbacks/feedback_6.jpg" alt="Dona Márcia Total Celulares">
+                            <div class="feedback-info"><h4>Márcia Rodrigues</h4><p>Compra: iPhone 11</p></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+    <!-- Contato -->
+    <section id="contato">
+        <div class="container" style="text-align: center;">
+            <div class="section-title" data-reveal>
+                <h2>Fale <span>Conosco</span></h2>
+                <div class="underline"></div>
+            </div>
+            
+            <p style="font-size: 1.2rem; margin-bottom: 3rem; color: var(--text-muted);">Estamos prontos para te atender. Escolha o melhor jeito:</p>
+            
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <a href="https://wa.me/5511962139011" target="_blank" class="btn btn-primary" style="background: #25d366; font-size: 1.2rem; padding: 1.5rem 3rem;">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="https://www.instagram.com/totalcelulares1?igsh=MTBzczU4NzM3bXF2Zg==" target="_blank" class="btn btn-primary" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); font-size: 1.2rem; padding: 1.5rem 3rem;">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+            </div>
+
+            <!-- Informações Adicionais -->
+            <div style="margin-top: 4rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; border-top: 1px solid var(--glass-border); padding-top: 3rem;">
+                <div data-reveal>
+                    <i class="fas fa-check-circle" style="font-size: 1.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                    <p style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 0.5rem;">Produtos</p>
+                    <p style="font-weight: 600;">Novos e Seminovos</p>
+                </div>
+                <div data-reveal>
+                    <i class="fas fa-truck" style="font-size: 1.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                    <p style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 0.5rem;">Logística</p>
+                    <p style="font-weight: 600;">Envio para São Paulo</p>
+                </div>
+                <div data-reveal>
+                    <i class="fas fa-clock" style="font-size: 1.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                    <p style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 0.5rem;">Horário</p>
+                    <p style="font-weight: 600;">08:00 às 18:00</p>
+                </div>
+                <div data-reveal>
+                    <i class="fas fa-map-marker-alt" style="font-size: 1.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                    <p style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 0.5rem;">Endereço</p>
+                    <p style="font-weight: 600;">R. Vinte e Cinco de Março, 687 (Box 16)</p>
+                </div>
+            </div>
+
+            <!-- Mapa -->
+            <div style="margin-top: 3rem; border-radius: 24px; overflow: hidden; height: 400px; border: 1px solid var(--glass-border);" data-reveal>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.518683515456!2d-46.63229712467026!3d-23.54148197881333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5853f6560001%3A0x6b40212f71887342!2sR.%2025%20de%20Mar%C3%A7o%2C%20687%20-%20Centro%20Hist%C3%B3rico%20de%20S%C3%A3o%20Paulo%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001021-100!5e0!3m2!1spt-BR!2sbr!4v1713565000000!5m2!1spt-BR!2sbr" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Coluna 1: Marca -->
+                <div class="footer-column">
+                    <div class="logo">TOTAL<span> CELULARES</span></div>
+                    <p class="footer-description">
+                        Conectando você ao melhor da tecnologia Aparelhos. Sua loja de confiança no coração de São Paulo para iPhones, Xiaomi e muito mais.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/totalcelulares1?igsh=MTBzczU4NzM3bXF2Zg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5511962139011" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Coluna 2: Links Rápidos -->
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#hero">Início</a></li>
+                        <li><a href="#catalogo">Catálogo</a></li>
+                        <li><a href="#servicos">Por que escolher a Total?</a></li>
+                        <li><a href="#feedbacks">Depoimentos</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 3: Principais Marcas -->
+                <div class="footer-column">
+                    <h3>Principais Marcas</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="switchCarousel('apple')">iPhone</a></li>
+                        <li><a href="#" onclick="switchCarousel('xiaomi')">Xiaomi</a></li>
+                        <li><a href="#" onclick="switchCarousel('poco')">POCO</a></li>
+                        <li><a href="#" onclick="switchCarousel('realme')">Realme</a></li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 4: Contato -->
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <div class="footer-contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>(11) 96213-9011</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>total.celulares1@gmail.com</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Seg - Sáb: 09h às 18h</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Total Celulares. Todos os direitos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://wa.me/5511962139011" class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
