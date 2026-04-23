@@ -87,7 +87,34 @@ document.addEventListener('DOMContentLoaded', () => {
             link.href = `https://wa.me/5511962139011?text=${message}`;
         });
     });
+
+    // 7. Catalog Search Logic
+    const searchInput = document.getElementById('catalog-search');
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            filterActiveCarousel(query);
+        });
+    }
 });
+
+function filterActiveCarousel(query) {
+    const activeCarousel = document.querySelector('.carousel-wrapper.active');
+    if (!activeCarousel) return;
+
+    const cards = activeCarousel.querySelectorAll('.product-card-v5');
+    cards.forEach(card => {
+        const title = card.querySelector('.card-title').innerText.toLowerCase();
+        const tagline = card.querySelector('.card-tagline').innerText.toLowerCase();
+        const specs = card.querySelector('.card-specs').innerText.toLowerCase();
+        
+        if (title.includes(query) || tagline.includes(query) || specs.includes(query)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
 
 // Catalog Navigation Logic
 function scrollCarousel(carouselId, distance) {
@@ -121,6 +148,12 @@ function switchCarousel(brand) {
             tab.classList.add('active');
         }
     });
+
+    // Re-apply search filter if query exists
+    const searchInput = document.getElementById('catalog-search');
+    if (searchInput) {
+        filterActiveCarousel(searchInput.value.toLowerCase());
+    }
 }
 
 /**
