@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const productCard = e.target.closest('.product-card-v5');
             const productName = productCard?.querySelector('.card-title')?.innerText || 'um produto do catálogo';
             const message = encodeURIComponent(`Olá Total Celulares! Gostaria de consultar o valor do ${productName} que vi no site.`);
-            link.href = `https://wa.me/5511962139011?text=${message}`;
+            link.href = `https://wa.me/5511945401687?text=${message}`;
         });
     });
 
