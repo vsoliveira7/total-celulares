@@ -144,7 +144,9 @@ function switchCarousel(brand) {
     
     // Find correctly clicked tab
     tabs.forEach(tab => {
-        if (tab.innerText.toLowerCase().includes(brand.toLowerCase())) {
+        const tabText = tab.innerText.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        const cleanBrand = brand.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        if (tabText.includes(cleanBrand)) {
             tab.classList.add('active');
         }
     });

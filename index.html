@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Total Celulares | Especialista em iPhone, Xiaomi e Realme em SP</title>
-    <meta name="description" content="Total Celulares - A melhor loja de iPhones novos e seminovos, Xiaomi e Realme na 25 de Março, São Paulo. Troca inteligente e acessórios premium.">
+    <title>Total Celulares | Especialista em iPhone em SP</title>
+    <meta name="description" content="Total Celulares - A melhor loja de iPhones novos e seminovos na 25 de Março, São Paulo. Troca inteligente e acessórios premium.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +47,7 @@
         <div class="container" style="display: flex; align-items: center; width: 100%;">
             <div class="hero-content" data-reveal>
                 <h1>TOTAL<br><span>CELULARES</span></h1>
-                <p>Somos especialistas em Apple e multimarcas, oferecendo smartphones e acessórios de qualidade, com procedência garantida e atendimento diferenciado. Na Total Celulares, transformamos o sonho dos clientes em realidade, com destaque para iPhones e Xiaomi, sempre com confiança, transparência e tecnologia de ponta.</p>
+                <p>Somos especialistas em Apple, oferecendo iPhones e acessórios de qualidade, com procedência garantida e atendimento diferenciado. Na Total Celulares, transformamos o sonho dos clientes em realidade, com destaque para iPhones novos e seminovos, sempre com confiança, transparência e tecnologia de ponta.</p>
                 <div class="hero-btns">
                     <a href="#catalogo" class="btn btn-primary">Ver Catálogo</a>
                     <a href="https://wa.me/5511945401687" class="btn btn-outline" target="_blank">Falar com Vendedor</a>
@@ -70,34 +70,36 @@
             </div>
 
             <div class="catalog-tabs">
-                <button class="catalog-tab active" onclick="switchCarousel('apple')">Apple</button>
-                <button class="catalog-tab" onclick="switchCarousel('xiaomi')">Xiaomi</button>
-                <button class="catalog-tab" onclick="switchCarousel('poco')">POCO</button>
-                <button class="catalog-tab" onclick="switchCarousel('realme')">Realme</button>
+                <button class="catalog-tab active" onclick="switchCarousel('iphone')">iPhone</button>
+                <button class="catalog-tab" onclick="switchCarousel('ipad')">iPad</button>
+                <button class="catalog-tab" onclick="switchCarousel('mac')">Mac</button>
+                <button class="catalog-tab" onclick="switchCarousel('watch')">Apple Watch</button>
+                <button class="catalog-tab" onclick="switchCarousel('airpods')">AirPods</button>
+                <button class="catalog-tab" onclick="switchCarousel('acessorios')">Acessórios Apple</button>
             </div>
 
             <div class="catalog-search-wrap" data-reveal>
                 <div class="search-box">
                     <i class="fas fa-search"></i>
-                    <input type="text" id="catalog-search" placeholder="Buscar por modelo (ex: iPhone 17, Redmi, Poco X8)...">
+                    <input type="text" id="catalog-search" placeholder="Buscar por modelo (ex: iPhone 17, iPad Pro, MacBook, Watch Ultra)...">
                 </div>
             </div>
 
-            <!-- Apple Carousel -->
-            <div id="carousel-apple" class="carousel-wrapper active">
-                <div class="nav-arrow nav-prev" onclick="scrollCarousel('carousel-apple', -340)"><i class="fas fa-chevron-left"></i></div>
-                <div class="nav-arrow nav-next" onclick="scrollCarousel('carousel-apple', 340)"><i class="fas fa-chevron-right"></i></div>
+            <!-- iPhone Carousel -->
+            <div id="carousel-iphone" class="carousel-wrapper active">
+                <div class="nav-arrow nav-prev" onclick="scrollCarousel('carousel-iphone', -340)"><i class="fas fa-chevron-left"></i></div>
+                <div class="nav-arrow nav-next" onclick="scrollCarousel('carousel-iphone', 340)"><i class="fas fa-chevron-right"></i></div>
                 <div class="carousel-container">
                     <!-- iPhone 17 Pro Max -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-blue">
-                            <img src="img/products/apple/LINHA 17/iPhone 17 Pro Max - Azul-intenso.png" alt="iPhone 17 Pro Max">
+                            <img src="img/products/apple/iPhone/LINHA 17/iPhone 17 Pro Max - Azul-intenso.png" alt="iPhone 17 Pro Max">
                         </div>
                         <div class="card-info-wrap">
                              <div class="color-dots">
-                                <div class="color-dot" style="background: #2b3a4a;" onclick="changeProductColor(this, 'img/products/apple/LINHA 17/iPhone 17 Pro Max - Azul-intenso.png', 'bg-blue', 'Azul Intenso')"></div>
-                                <div class="color-dot" style="background: #e6a673;" onclick="changeProductColor(this, 'img/products/apple/LINHA 17/iPhone 17 Pro Max - Laranja-cósmico.png', 'bg-orange', 'Laranja Cósmico')"></div>
-                                <div class="color-dot" style="background: #d1d1d1;" onclick="changeProductColor(this, 'img/products/apple/LINHA 17/iPhone 17 Pro Max - Prateado.png', 'bg-gray', 'Prateado')"></div>
+                                <div class="color-dot" style="background: #2b3a4a;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 17/iPhone 17 Pro Max - Azul-intenso.png', 'bg-blue', 'Azul Intenso')"></div>
+                                <div class="color-dot" style="background: #e6a673;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 17/iPhone 17 Pro Max - Laranja-cósmico.png', 'bg-orange', 'Laranja Cósmico')"></div>
+                                <div class="color-dot" style="background: #d1d1d1;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 17/iPhone 17 Pro Max - Prateado.png', 'bg-gray', 'Prateado')"></div>
                             </div>
                             <h3 class="card-title">iPhone 17 Pro Max</h3>
                             <p class="card-tagline">Topo da linha com melhor bateria, tela maior e conjunto de câmeras mais completo. Ideal para quem quer o melhor modelo disponível.</p>
@@ -111,13 +113,13 @@
                     <!-- iPhone 17 Pro -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-orange">
-                            <img src="img/products/apple/LINHA 17/iPhone 17 Pro - Laranja-cósmico.png" alt="iPhone 17 Pro">
+                            <img src="img/products/apple/iPhone/LINHA 17/iPhone 17 Pro - Laranja-cósmico.png" alt="iPhone 17 Pro">
                         </div>
                         <div class="card-info-wrap">
                              <div class="color-dots">
-                                <div class="color-dot" style="background: #e6a673;" onclick="changeProductColor(this, 'img/products/apple/LINHA 17/iPhone 17 Pro - Laranja-cósmico.png', 'bg-orange', 'Laranja Cósmico')"></div>
-                                <div class="color-dot" style="background: #2b3a4a;" onclick="changeProductColor(this, 'img/products/apple/LINHA 17/iPhone 17 Pro - Azul-intenso.png', 'bg-blue', 'Azul Intenso')"></div>
-                                <div class="color-dot" style="background: #d1d1d1;" onclick="changeProductColor(this, 'img/products/apple/LINHA 17/iPhone 17 Pro - Prateado.png', 'bg-gray', 'Prateado')"></div>
+                                <div class="color-dot" style="background: #e6a673;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 17/iPhone 17 Pro - Laranja-cósmico.png', 'bg-orange', 'Laranja Cósmico')"></div>
+                                <div class="color-dot" style="background: #2b3a4a;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 17/iPhone 17 Pro - Azul-intenso.png', 'bg-blue', 'Azul Intenso')"></div>
+                                <div class="color-dot" style="background: #d1d1d1;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 17/iPhone 17 Pro - Prateado.png', 'bg-gray', 'Prateado')"></div>
                             </div>
                             <h3 class="card-title">iPhone 17 Pro</h3>
                             <p class="card-tagline">Modelo premium com alto desempenho e recursos avançados. Ideal para usuários exigentes e criadores de conteúdo.</p>
@@ -131,15 +133,15 @@
                     <!-- iPhone 17 -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-blue">
-                            <img src="img/products/apple/LINHA 17/iPhone 17 - Azul-névoa.png" alt="iPhone 17">
+                            <img src="img/products/apple/iPhone/LINHA 17/iPhone 17 - Azul-névoa.png" alt="iPhone 17">
                         </div>
                         <div class="card-info-wrap">
                             <div class="color-dots">
-                                <div class="color-dot" style="background: #a7c1e3;" onclick="changeProductColor(this, 'img/products/apple/LINHA 17/iPhone 17 - Azul-névoa.png', 'bg-blue', 'Azul Névoa')"></div>
-                                <div class="color-dot" style="background: #ffffff;" onclick="changeProductColor(this, 'img/products/apple/LINHA 17/iPhone 17 - Branco.png', 'bg-teal', 'Branco')"></div>
-                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/LINHA 17/iPhone 17 - Preto.png', 'bg-gray', 'Preto')"></div>
-                                <div class="color-dot" style="background: #e6e6fa;" onclick="changeProductColor(this, 'img/products/apple/LINHA 17/iPhone 17 - Lavanda.png', 'bg-purple', 'Lavanda')"></div>
-                                <div class="color-dot" style="background: #9cad9b;" onclick="changeProductColor(this, 'img/products/apple/LINHA 17/iPhone 17 - Sálvia.png', 'bg-teal', 'Sálvia')"></div>
+                                <div class="color-dot" style="background: #a7c1e3;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 17/iPhone 17 - Azul-névoa.png', 'bg-blue', 'Azul Névoa')"></div>
+                                <div class="color-dot" style="background: #ffffff;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 17/iPhone 17 - Branco.png', 'bg-teal', 'Branco')"></div>
+                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 17/iPhone 17 - Preto.png', 'bg-gray', 'Preto')"></div>
+                                <div class="color-dot" style="background: #e6e6fa;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 17/iPhone 17 - Lavanda.png', 'bg-purple', 'Lavanda')"></div>
+                                <div class="color-dot" style="background: #9cad9b;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 17/iPhone 17 - Sálvia.png', 'bg-teal', 'Sálvia')"></div>
                             </div>
                             <h3 class="card-title">iPhone 17</h3>
                             <p class="card-tagline">Modelo base da nova geração com melhorias em desempenho e eficiência. Ideal para quem quer um iPhone atualizado para uso geral.</p>
@@ -153,13 +155,13 @@
                     <!-- iPhone 17e -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-pink">
-                            <img src="img/products/apple/LINHA 17/iPhone 17e - Rosa-pálido.png" alt="iPhone 17e">
+                            <img src="img/products/apple/iPhone/LINHA 17/iPhone 17e - Rosa-pálido.png" alt="iPhone 17e">
                         </div>
                         <div class="card-info-wrap">
                             <div class="color-dots">
-                                <div class="color-dot" style="background: #f8c8dc;" onclick="changeProductColor(this, 'img/products/apple/LINHA 17/iPhone 17e - Rosa-pálido.png', 'bg-pink', 'Rosa Pálido')"></div>
-                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/LINHA 17/iPhone 17e - Preto.png', 'bg-gray', 'Preto')"></div>
-                                <div class="color-dot" style="background: #ffffff;" onclick="changeProductColor(this, 'img/products/apple/LINHA 17/iPhone 17e - Branco.png', 'bg-teal', 'Branco')"></div>
+                                <div class="color-dot" style="background: #f8c8dc;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 17/iPhone 17e - Rosa-pálido.png', 'bg-pink', 'Rosa Pálido')"></div>
+                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 17/iPhone 17e - Preto.png', 'bg-gray', 'Preto')"></div>
+                                <div class="color-dot" style="background: #ffffff;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 17/iPhone 17e - Branco.png', 'bg-teal', 'Branco')"></div>
                             </div>
                             <h3 class="card-title">iPhone 17e</h3>
                             <p class="card-tagline">Versão mais acessível da linha, mantendo bom desempenho no dia a dia. Ideal para quem busca custo-benefício.</p>
@@ -173,14 +175,14 @@
                     <!-- iPhone 16 Pro Max -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-gray">
-                            <img src="img/products/apple/LINHA 16/Iphone 16 Pro Max - Titânio Natural.png" alt="iPhone 16 Pro Max">
+                            <img src="img/products/apple/iPhone/LINHA 16/Iphone 16 Pro Max - Titânio Natural.png" alt="iPhone 16 Pro Max">
                         </div>
                         <div class="card-info-wrap">
                             <div class="color-dots">
-                                <div class="color-dot" style="background: #bab5a8;" onclick="changeProductColor(this, 'img/products/apple/LINHA 16/Iphone 16 Pro Max - Titânio Natural.png', 'bg-gray', 'Titânio Natural')"></div>
-                                <div class="color-dot" style="background: #f5f5f0;" onclick="changeProductColor(this, 'img/products/apple/LINHA 16/Iphone 16 Pro Max - Titânio Branco.png', 'bg-teal', 'Titânio Branco')"></div>
-                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/LINHA 16/Iphone 16 Pro Max - Titânio Preto.png', 'bg-gray', 'Titânio Preto')"></div>
-                                <div class="color-dot" style="background: #d4c2b0;" onclick="changeProductColor(this, 'img/products/apple/LINHA 16/Iphone 16 Pro Max - Titânio Deserto.png', 'bg-orange', 'Titânio Deserto')"></div>
+                                <div class="color-dot" style="background: #bab5a8;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 16/Iphone 16 Pro Max - Titânio Natural.png', 'bg-gray', 'Titânio Natural')"></div>
+                                <div class="color-dot" style="background: #f5f5f0;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 16/Iphone 16 Pro Max - Titânio Branco.png', 'bg-teal', 'Titânio Branco')"></div>
+                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 16/Iphone 16 Pro Max - Titânio Preto.png', 'bg-gray', 'Titânio Preto')"></div>
+                                <div class="color-dot" style="background: #d4c2b0;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 16/Iphone 16 Pro Max - Titânio Deserto.png', 'bg-orange', 'Titânio Deserto')"></div>
                             </div>
                             <h3 class="card-title">iPhone 16 Pro Max</h3>
                             <p class="card-tagline">Topo da linha com máxima performance, maior bateria e sistema de câmeras mais completo da geração. Ideal para quem quer o melhor iPhone disponível.</p>
@@ -194,14 +196,14 @@
                     <!-- iPhone 16 Pro -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-gray">
-                            <img src="img/products/apple/LINHA 16/Iphone 16 Pro - Titânio Natural.png" alt="iPhone 16 Pro">
+                            <img src="img/products/apple/iPhone/LINHA 16/Iphone 16 Pro - Titânio Natural.png" alt="iPhone 16 Pro">
                         </div>
                         <div class="card-info-wrap">
                             <div class="color-dots">
-                                <div class="color-dot" style="background: #bab5a8;" onclick="changeProductColor(this, 'img/products/apple/LINHA 16/Iphone 16 Pro - Titânio Natural.png', 'bg-gray', 'Titânio Natural')"></div>
-                                <div class="color-dot" style="background: #f5f5f0;" onclick="changeProductColor(this, 'img/products/apple/LINHA 16/Iphone 16 Pro - Titânio Branco.png', 'bg-teal', 'Titânio Branco')"></div>
-                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/LINHA 16/Iphone 16 Pro - Titânio Preto.png', 'bg-gray', 'Titânio Preto')"></div>
-                                <div class="color-dot" style="background: #d4c2b0;" onclick="changeProductColor(this, 'img/products/apple/LINHA 16/Iphone 16 Pro - Titânio Deserto.png', 'bg-orange', 'Titânio Deserto')"></div>
+                                <div class="color-dot" style="background: #bab5a8;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 16/Iphone 16 Pro - Titânio Natural.png', 'bg-gray', 'Titânio Natural')"></div>
+                                <div class="color-dot" style="background: #f5f5f0;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 16/Iphone 16 Pro - Titânio Branco.png', 'bg-teal', 'Titânio Branco')"></div>
+                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 16/Iphone 16 Pro - Titânio Preto.png', 'bg-gray', 'Titânio Preto')"></div>
+                                <div class="color-dot" style="background: #d4c2b0;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 16/Iphone 16 Pro - Titânio Deserto.png', 'bg-orange', 'Titânio Deserto')"></div>
                             </div>
                             <h3 class="card-title">iPhone 16 Pro</h3>
                             <p class="card-tagline">Modelo premium com alto desempenho, acabamento em titânio e câmeras avançadas. Ideal para usuários exigentes e criadores de conteúdo.</p>
@@ -215,15 +217,15 @@
                     <!-- iPhone 16 Plus -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-pink">
-                            <img src="img/products/apple/LINHA 16/Iphone 16 Plus - Rosa.png" alt="iPhone 16 Plus">
+                            <img src="img/products/apple/iPhone/LINHA 16/Iphone 16 Plus - Rosa.png" alt="iPhone 16 Plus">
                         </div>
                         <div class="card-info-wrap">
                             <div class="color-dots">
-                                <div class="color-dot" style="background: #f8c8dc;" onclick="changeProductColor(this, 'img/products/apple/LINHA 16/Iphone 16 Plus - Rosa.png', 'bg-pink', 'Rosa')"></div>
-                                <div class="color-dot" style="background: #4b7095;" onclick="changeProductColor(this, 'img/products/apple/LINHA 16/Iphone 16 Plus - Azul.png', 'bg-blue', 'Azul')"></div>
-                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/LINHA 16/Iphone 16 Plus - Preto.png', 'bg-gray', 'Preto')"></div>
-                                <div class="color-dot" style="background: #ffffff;" onclick="changeProductColor(this, 'img/products/apple/LINHA 16/Iphone 16 Plus - Branco.png', 'bg-teal', 'Branco')"></div>
-                                <div class="color-dot" style="background: #8ca298;" onclick="changeProductColor(this, 'img/products/apple/LINHA 16/Iphone 16 Plus - Verde.png', 'bg-teal', 'Verde')"></div>
+                                <div class="color-dot" style="background: #f8c8dc;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 16/Iphone 16 Plus - Rosa.png', 'bg-pink', 'Rosa')"></div>
+                                <div class="color-dot" style="background: #4b7095;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 16/Iphone 16 Plus - Azul.png', 'bg-blue', 'Azul')"></div>
+                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 16/Iphone 16 Plus - Preto.png', 'bg-gray', 'Preto')"></div>
+                                <div class="color-dot" style="background: #ffffff;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 16/Iphone 16 Plus - Branco.png', 'bg-teal', 'Branco')"></div>
+                                <div class="color-dot" style="background: #8ca298;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 16/Iphone 16 Plus - Verde.png', 'bg-teal', 'Verde')"></div>
                             </div>
                             <h3 class="card-title">iPhone 16 Plus</h3>
                             <p class="card-tagline">Versão com tela maior e bateria de longa duração, ideal para consumo de conteúdo. Ideal para quem busca mais autonomia e tela grande.</p>
@@ -237,15 +239,15 @@
                     <!-- iPhone 16 -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-gray">
-                            <img src="img/products/apple/LINHA 16/Iphone 16 - Preto.png" alt="iPhone 16">
+                            <img src="img/products/apple/iPhone/LINHA 16/Iphone 16 - Preto.png" alt="iPhone 16">
                         </div>
                         <div class="card-info-wrap">
                             <div class="color-dots">
-                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/LINHA 16/Iphone 16 - Preto.png', 'bg-gray', 'Preto')"></div>
-                                <div class="color-dot" style="background: #ffffff;" onclick="changeProductColor(this, 'img/products/apple/LINHA 16/Iphone 16 - Branco.png', 'bg-teal', 'Branco')"></div>
-                                <div class="color-dot" style="background: #4b7095;" onclick="changeProductColor(this, 'img/products/apple/LINHA 16/Iphone 16 - Azul.png', 'bg-blue', 'Azul')"></div>
-                                <div class="color-dot" style="background: #f8c8dc;" onclick="changeProductColor(this, 'img/products/apple/LINHA 16/Iphone 16 - Rosa.png', 'bg-pink', 'Rosa')"></div>
-                                <div class="color-dot" style="background: #8ca298;" onclick="changeProductColor(this, 'img/products/apple/LINHA 16/Iphone 16 - Verde.png', 'bg-teal', 'Verde')"></div>
+                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 16/Iphone 16 - Preto.png', 'bg-gray', 'Preto')"></div>
+                                <div class="color-dot" style="background: #ffffff;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 16/Iphone 16 - Branco.png', 'bg-teal', 'Branco')"></div>
+                                <div class="color-dot" style="background: #4b7095;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 16/Iphone 16 - Azul.png', 'bg-blue', 'Azul')"></div>
+                                <div class="color-dot" style="background: #f8c8dc;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 16/Iphone 16 - Rosa.png', 'bg-pink', 'Rosa')"></div>
+                                <div class="color-dot" style="background: #8ca298;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 16/Iphone 16 - Verde.png', 'bg-teal', 'Verde')"></div>
                             </div>
                             <h3 class="card-title">iPhone 16</h3>
                             <p class="card-tagline">Modelo moderno com ótimo desempenho e câmeras aprimoradas para o dia a dia. Ideal para quem quer um iPhone atualizado e equilibrado.</p>
@@ -259,12 +261,12 @@
                     <!-- iPhone 16e -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-gray">
-                            <img src="img/products/apple/LINHA 16/Iphone 16e - Preto.png" alt="iPhone 16e">
+                            <img src="img/products/apple/iPhone/LINHA 16/Iphone 16e - Preto.png" alt="iPhone 16e">
                         </div>
                         <div class="card-info-wrap">
                             <div class="color-dots">
-                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/LINHA 16/Iphone 16e - Preto.png', 'bg-gray', 'Preto')"></div>
-                                <div class="color-dot" style="background: #ffffff;" onclick="changeProductColor(this, 'img/products/apple/LINHA 16/Iphone 16e - Branco.png', 'bg-teal', 'Branco')"></div>
+                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 16/Iphone 16e - Preto.png', 'bg-gray', 'Preto')"></div>
+                                <div class="color-dot" style="background: #ffffff;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 16/Iphone 16e - Branco.png', 'bg-teal', 'Branco')"></div>
                             </div>
                             <h3 class="card-title">iPhone 16e</h3>
                             <p class="card-tagline">Versão mais acessível da linha, com bom desempenho e experiência fluida. Ideal para quem busca custo-benefício em um modelo mais atual.</p>
@@ -278,14 +280,14 @@
                     <!-- iPhone 15 Pro Max -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-gray">
-                            <img src="img/products/apple/LINHA 15/iPhone 15 Pro Max - Titânio Preto.png" alt="iPhone 15 Pro Max">
+                            <img src="img/products/apple/iPhone/LINHA 15/iPhone 15 Pro Max - Titânio Preto.png" alt="iPhone 15 Pro Max">
                         </div>
                         <div class="card-info-wrap">
                             <div class="color-dots">
-                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/LINHA 15/iPhone 15 Pro Max - Titânio Preto.png', 'bg-gray', 'Titânio Preto')"></div>
-                                <div class="color-dot" style="background: #f5f5f0;" onclick="changeProductColor(this, 'img/products/apple/LINHA 15/iPhone 15 Pro Max - Titânio Branco.png', 'bg-teal', 'Titânio Branco')"></div>
-                                <div class="color-dot" style="background: #bab5a8;" onclick="changeProductColor(this, 'img/products/apple/LINHA 15/iPhone 15 Pro Max - Titânio Natural.png', 'bg-gray', 'Titânio Natural')"></div>
-                                <div class="color-dot" style="background: #4b7095;" onclick="changeProductColor(this, 'img/products/apple/LINHA 15/iPhone 15 Pro Max - Titânio Azul.png', 'bg-blue', 'Titânio Azul')"></div>
+                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 15/iPhone 15 Pro Max - Titânio Preto.png', 'bg-gray', 'Titânio Preto')"></div>
+                                <div class="color-dot" style="background: #f5f5f0;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 15/iPhone 15 Pro Max - Titânio Branco.png', 'bg-teal', 'Titânio Branco')"></div>
+                                <div class="color-dot" style="background: #bab5a8;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 15/iPhone 15 Pro Max - Titânio Natural.png', 'bg-gray', 'Titânio Natural')"></div>
+                                <div class="color-dot" style="background: #4b7095;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 15/iPhone 15 Pro Max - Titânio Azul.png', 'bg-blue', 'Titânio Azul')"></div>
                             </div>
                             <h3 class="card-title">iPhone 15 Pro Max</h3>
                             <p class="card-tagline">Topo da linha com melhor câmera e desempenho da geração. Ideal para quem quer máxima performance e qualidade.</p>
@@ -299,14 +301,14 @@
                     <!-- iPhone 15 Pro -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-gray">
-                            <img src="img/products/apple/LINHA 15/iPhone 15 Pro - Titânio Preto.png" alt="iPhone 15 Pro">
+                            <img src="img/products/apple/iPhone/LINHA 15/iPhone 15 Pro - Titânio Preto.png" alt="iPhone 15 Pro">
                         </div>
                         <div class="card-info-wrap">
                             <div class="color-dots">
-                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/LINHA 15/iPhone 15 Pro - Titânio Preto.png', 'bg-gray', 'Titânio Preto')"></div>
-                                <div class="color-dot" style="background: #f5f5f0;" onclick="changeProductColor(this, 'img/products/apple/LINHA 15/iPhone 15 Pro - Titânio Branco.png', 'bg-teal', 'Titânio Branco')"></div>
-                                <div class="color-dot" style="background: #bab5a8;" onclick="changeProductColor(this, 'img/products/apple/LINHA 15/iPhone 15 Pro - Titânio Natural.png', 'bg-gray', 'Titânio Natural')"></div>
-                                <div class="color-dot" style="background: #4b7095;" onclick="changeProductColor(this, 'img/products/apple/LINHA 15/iPhone 15 Pro - Titânio Azul.png', 'bg-blue', 'Titânio Azul')"></div>
+                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 15/iPhone 15 Pro - Titânio Preto.png', 'bg-gray', 'Titânio Preto')"></div>
+                                <div class="color-dot" style="background: #f5f5f0;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 15/iPhone 15 Pro - Titânio Branco.png', 'bg-teal', 'Titânio Branco')"></div>
+                                <div class="color-dot" style="background: #bab5a8;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 15/iPhone 15 Pro - Titânio Natural.png', 'bg-gray', 'Titânio Natural')"></div>
+                                <div class="color-dot" style="background: #4b7095;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 15/iPhone 15 Pro - Titânio Azul.png', 'bg-blue', 'Titânio Azul')"></div>
                             </div>
                             <h3 class="card-title">iPhone 15 Pro</h3>
                             <p class="card-tagline">Modelo premium com chip A17 Pro, acabamento em titânio e alto desempenho. Ideal para usuários exigentes e criadores de conteúdo.</p>
@@ -320,15 +322,15 @@
                     <!-- iPhone 15 Plus -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-blue">
-                            <img src="img/products/apple/LINHA 15/iPhone 15 Plus - Azul.png" alt="iPhone 15 Plus">
+                            <img src="img/products/apple/iPhone/LINHA 15/iPhone 15 Plus - Azul.png" alt="iPhone 15 Plus">
                         </div>
                         <div class="card-info-wrap">
                             <div class="color-dots">
-                                <div class="color-dot" style="background: #a7c1e3;" onclick="changeProductColor(this, 'img/products/apple/LINHA 15/iPhone 15 Plus - Azul.png', 'bg-blue', 'Azul')"></div>
-                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/LINHA 15/iPhone 15 Plus - Preto.png', 'bg-gray', 'Preto')"></div>
-                                <div class="color-dot" style="background: #f8c8dc;" onclick="changeProductColor(this, 'img/products/apple/LINHA 15/iPhone 15 Plus - Rosa.png', 'bg-pink', 'Rosa')"></div>
-                                <div class="color-dot" style="background: #f5f0d5;" onclick="changeProductColor(this, 'img/products/apple/LINHA 15/iPhone 15 Plus - Amarelo.png', 'bg-orange', 'Amarelo')"></div>
-                                <div class="color-dot" style="background: #d5e5d5;" onclick="changeProductColor(this, 'img/products/apple/LINHA 15/iPhone 15 Plus - Verde.png', 'bg-teal', 'Verde')"></div>
+                                <div class="color-dot" style="background: #a7c1e3;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 15/iPhone 15 Plus - Azul.png', 'bg-blue', 'Azul')"></div>
+                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 15/iPhone 15 Plus - Preto.png', 'bg-gray', 'Preto')"></div>
+                                <div class="color-dot" style="background: #f8c8dc;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 15/iPhone 15 Plus - Rosa.png', 'bg-pink', 'Rosa')"></div>
+                                <div class="color-dot" style="background: #f5f0d5;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 15/iPhone 15 Plus - Amarelo.png', 'bg-orange', 'Amarelo')"></div>
+                                <div class="color-dot" style="background: #d5e5d5;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 15/iPhone 15 Plus - Verde.png', 'bg-teal', 'Verde')"></div>
                             </div>
                             <h3 class="card-title">iPhone 15 Plus</h3>
                             <p class="card-tagline">Versão com tela maior e bateria de longa duração, ideal para uso prolongado. Ideal para quem busca mais autonomia e uma tela maior.</p>
@@ -342,15 +344,15 @@
                     <!-- iPhone 15 -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-gray">
-                            <img src="img/products/apple/LINHA 15/iPhone 15 - Preto.png" alt="iPhone 15">
+                            <img src="img/products/apple/iPhone/LINHA 15/iPhone 15 - Preto.png" alt="iPhone 15">
                         </div>
                         <div class="card-info-wrap">
                             <div class="color-dots">
-                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/LINHA 15/iPhone 15 - Preto.png', 'bg-gray', 'Preto')"></div>
-                                <div class="color-dot" style="background: #a7c1e3;" onclick="changeProductColor(this, 'img/products/apple/LINHA 15/iPhone 15 - Azul.png', 'bg-blue', 'Azul')"></div>
-                                <div class="color-dot" style="background: #f8c8dc;" onclick="changeProductColor(this, 'img/products/apple/LINHA 15/iPhone 15 - Rosa.png', 'bg-pink', 'Rosa')"></div>
-                                <div class="color-dot" style="background: #f5f0d5;" onclick="changeProductColor(this, 'img/products/apple/LINHA 15/iPhone 15 - Amarelo.png', 'bg-orange', 'Amarelo')"></div>
-                                <div class="color-dot" style="background: #d5e5d5;" onclick="changeProductColor(this, 'img/products/apple/LINHA 15/iPhone 15 - Verde.png', 'bg-teal', 'Verde')"></div>
+                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 15/iPhone 15 - Preto.png', 'bg-gray', 'Preto')"></div>
+                                <div class="color-dot" style="background: #a7c1e3;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 15/iPhone 15 - Azul.png', 'bg-blue', 'Azul')"></div>
+                                <div class="color-dot" style="background: #f8c8dc;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 15/iPhone 15 - Rosa.png', 'bg-pink', 'Rosa')"></div>
+                                <div class="color-dot" style="background: #f5f0d5;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 15/iPhone 15 - Amarelo.png', 'bg-orange', 'Amarelo')"></div>
+                                <div class="color-dot" style="background: #d5e5d5;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 15/iPhone 15 - Verde.png', 'bg-teal', 'Verde')"></div>
                             </div>
                             <h3 class="card-title">iPhone 15</h3>
                             <p class="card-tagline">Modelo moderno com câmera de 48 MP e excelente desempenho para o dia a dia. Ideal para quem quer um iPhone atualizado e confiável.</p>
@@ -364,14 +366,14 @@
                     <!-- iPhone 14 Pro Max -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-purple">
-                            <img src="img/products/apple/LINHA 14/iPhone 14 Pro Max - Roxo Profundo.png" alt="iPhone 14 Pro Max">
+                            <img src="img/products/apple/iPhone/LINHA 14/iPhone 14 Pro Max - Roxo Profundo.png" alt="iPhone 14 Pro Max">
                         </div>
                         <div class="card-info-wrap">
                             <div class="color-dots">
-                                <div class="color-dot" style="background: #594f61;" onclick="changeProductColor(this, 'img/products/apple/LINHA 14/iPhone 14 Pro Max - Roxo Profundo.png', 'bg-purple', 'Roxo Profundo')"></div>
-                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/LINHA 14/iPhone 14 Pro Max - Preto Espacial.png', 'bg-gray', 'Preto Espacial')"></div>
-                                <div class="color-dot" style="background: #f5f5f0;" onclick="changeProductColor(this, 'img/products/apple/LINHA 14/iPhone 14 Pro Max - Prata.png', 'bg-teal', 'Prata')"></div>
-                                <div class="color-dot" style="background: #fcebc0;" onclick="changeProductColor(this, 'img/products/apple/LINHA 14/iPhone 14 Pro Max - Dourado.png', 'bg-orange', 'Dourado')"></div>
+                                <div class="color-dot" style="background: #594f61;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 14/iPhone 14 Pro Max - Roxo Profundo.png', 'bg-purple', 'Roxo Profundo')"></div>
+                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 14/iPhone 14 Pro Max - Preto Espacial.png', 'bg-gray', 'Preto Espacial')"></div>
+                                <div class="color-dot" style="background: #f5f5f0;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 14/iPhone 14 Pro Max - Prata.png', 'bg-teal', 'Prata')"></div>
+                                <div class="color-dot" style="background: #fcebc0;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 14/iPhone 14 Pro Max - Dourado.png', 'bg-orange', 'Dourado')"></div>
                             </div>
                             <h3 class="card-title">iPhone 14 Pro Max</h3>
                             <p class="card-tagline">Topo da linha com melhor bateria e desempenho da geração. Ideal para quem quer o melhor da linha 14.</p>
@@ -385,14 +387,14 @@
                     <!-- iPhone 14 Pro -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-gray">
-                            <img src="img/products/apple/LINHA 14/iPhone 14 Pro - Preto Espacial.png" alt="iPhone 14 Pro">
+                            <img src="img/products/apple/iPhone/LINHA 14/iPhone 14 Pro - Preto Espacial.png" alt="iPhone 14 Pro">
                         </div>
                         <div class="card-info-wrap">
                             <div class="color-dots">
-                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/LINHA 14/iPhone 14 Pro - Preto Espacial.png', 'bg-gray', 'Preto Espacial')"></div>
-                                <div class="color-dot" style="background: #594f61;" onclick="changeProductColor(this, 'img/products/apple/LINHA 14/iPhone 14 Pro - Roxo Profundo.png', 'bg-purple', 'Roxo Profundo')"></div>
-                                <div class="color-dot" style="background: #f5f5f0;" onclick="changeProductColor(this, 'img/products/apple/LINHA 14/iPhone 14 Pro - Prata.png', 'bg-teal', 'Prata')"></div>
-                                <div class="color-dot" style="background: #fcebc0;" onclick="changeProductColor(this, 'img/products/apple/LINHA 14/iPhone 14 Pro - Dourado.png', 'bg-orange', 'Dourado')"></div>
+                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 14/iPhone 14 Pro - Preto Espacial.png', 'bg-gray', 'Preto Espacial')"></div>
+                                <div class="color-dot" style="background: #594f61;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 14/iPhone 14 Pro - Roxo Profundo.png', 'bg-purple', 'Roxo Profundo')"></div>
+                                <div class="color-dot" style="background: #f5f5f0;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 14/iPhone 14 Pro - Prata.png', 'bg-teal', 'Prata')"></div>
+                                <div class="color-dot" style="background: #fcebc0;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 14/iPhone 14 Pro - Dourado.png', 'bg-orange', 'Dourado')"></div>
                             </div>
                             <h3 class="card-title">iPhone 14 Pro</h3>
                             <p class="card-tagline">Modelo premium com chip A16, tela fluida e câmera de 48 MP para fotos e vídeos de alto nível. Ideal para usuários exigentes que querem mais desempenho e qualidade.</p>
@@ -406,16 +408,16 @@
                     <!-- iPhone 14 Plus -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-blue">
-                            <img src="img/products/apple/LINHA 14/iPhone 14 Plus - Azul.png" alt="iPhone 14 Plus">
+                            <img src="img/products/apple/iPhone/LINHA 14/iPhone 14 Plus - Azul.png" alt="iPhone 14 Plus">
                         </div>
                         <div class="card-info-wrap">
                             <div class="color-dots">
-                                <div class="color-dot" style="background: #a7c1e3;" onclick="changeProductColor(this, 'img/products/apple/LINHA 14/iPhone 14 Plus - Azul.png', 'bg-blue', 'Azul')"></div>
-                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/LINHA 14/iPhone 14 Plus - Meia-noite.png', 'bg-gray', 'Meia-noite')"></div>
-                                <div class="color-dot" style="background: #faf9f6;" onclick="changeProductColor(this, 'img/products/apple/LINHA 14/iPhone 14 Plus - Estelar.png', 'bg-teal', 'Estelar')"></div>
-                                <div class="color-dot" style="background: #e6e6fa;" onclick="changeProductColor(this, 'img/products/apple/LINHA 14/iPhone 14 Plus - Roxo.png', 'bg-purple', 'Roxo')"></div>
-                                <div class="color-dot" style="background: #f5f0d5;" onclick="changeProductColor(this, 'img/products/apple/LINHA 14/iPhone 14 Plus - Amarelo.png', 'bg-orange', 'Amarelo')"></div>
-                                <div class="color-dot" style="background: #ff0000;" onclick="changeProductColor(this, 'img/products/apple/LINHA 14/iPhone 14 Plus - (PRODUCT)RED.png', 'bg-orange', 'Red')"></div>
+                                <div class="color-dot" style="background: #a7c1e3;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 14/iPhone 14 Plus - Azul.png', 'bg-blue', 'Azul')"></div>
+                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 14/iPhone 14 Plus - Meia-noite.png', 'bg-gray', 'Meia-noite')"></div>
+                                <div class="color-dot" style="background: #faf9f6;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 14/iPhone 14 Plus - Estelar.png', 'bg-teal', 'Estelar')"></div>
+                                <div class="color-dot" style="background: #e6e6fa;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 14/iPhone 14 Plus - Roxo.png', 'bg-purple', 'Roxo')"></div>
+                                <div class="color-dot" style="background: #f5f0d5;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 14/iPhone 14 Plus - Amarelo.png', 'bg-orange', 'Amarelo')"></div>
+                                <div class="color-dot" style="background: #ff0000;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 14/iPhone 14 Plus - (PRODUCT)RED.png', 'bg-orange', 'Red')"></div>
                             </div>
                             <h3 class="card-title">iPhone 14 Plus</h3>
                             <p class="card-tagline">Versão com tela maior e bateria de longa duração, ideal para consumo de conteúdo. Ideal para quem busca tela grande e bateria duradoura.</p>
@@ -429,15 +431,15 @@
                     <!-- iPhone 14 -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-gray">
-                            <img src="img/products/apple/LINHA 14/iPhone 14 - Meia-noite.png" alt="iPhone 14">
+                            <img src="img/products/apple/iPhone/LINHA 14/iPhone 14 - Meia-noite.png" alt="iPhone 14">
                         </div>
                         <div class="card-info-wrap">
                             <div class="color-dots">
-                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/LINHA 14/iPhone 14 - Meia-noite.png', 'bg-gray', 'Meia-noite')"></div>
-                                <div class="color-dot" style="background: #a7c1e3;" onclick="changeProductColor(this, 'img/products/apple/LINHA 14/iPhone 14 - Azul.png', 'bg-blue', 'Azul')"></div>
-                                <div class="color-dot" style="background: #faf9f6;" onclick="changeProductColor(this, 'img/products/apple/LINHA 14/iPhone 14 - Estelar.png', 'bg-teal', 'Estelar')"></div>
-                                <div class="color-dot" style="background: #e6e6fa;" onclick="changeProductColor(this, 'img/products/apple/LINHA 14/iPhone 14 - Roxo.png', 'bg-purple', 'Roxo')"></div>
-                                <div class="color-dot" style="background: #f5f0d5;" onclick="changeProductColor(this, 'img/products/apple/LINHA 14/iPhone 14 - Amarelo.png', 'bg-orange', 'Amarelo')"></div>
+                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 14/iPhone 14 - Meia-noite.png', 'bg-gray', 'Meia-noite')"></div>
+                                <div class="color-dot" style="background: #a7c1e3;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 14/iPhone 14 - Azul.png', 'bg-blue', 'Azul')"></div>
+                                <div class="color-dot" style="background: #faf9f6;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 14/iPhone 14 - Estelar.png', 'bg-teal', 'Estelar')"></div>
+                                <div class="color-dot" style="background: #e6e6fa;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 14/iPhone 14 - Roxo.png', 'bg-purple', 'Roxo')"></div>
+                                <div class="color-dot" style="background: #f5f0d5;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 14/iPhone 14 - Amarelo.png', 'bg-orange', 'Amarelo')"></div>
                             </div>
                             <h3 class="card-title">iPhone 14</h3>
                             <p class="card-tagline">Modelo moderno com ótimo desempenho e excelente experiência no dia a dia. Ideal para quem quer um iPhone atual com bom custo-benefício.</p>
@@ -451,15 +453,15 @@
                     <!-- iPhone 13 Pro Max -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-blue">
-                            <img src="img/products/apple/LINHA 13/IPhone 13 Pro Max - Azul Sierra.png" alt="iPhone 13 Pro Max">
+                            <img src="img/products/apple/iPhone/LINHA 13/IPhone 13 Pro Max - Azul Sierra.png" alt="iPhone 13 Pro Max">
                         </div>
                         <div class="card-info-wrap">
                             <div class="color-dots">
-                                <div class="color-dot" style="background: #9ab5cf;" onclick="changeProductColor(this, 'img/products/apple/LINHA 13/IPhone 13 Pro Max - Azul Sierra.png', 'bg-blue', 'Azul Sierra')"></div>
-                                <div class="color-dot" style="background: #545652;" onclick="changeProductColor(this, 'img/products/apple/LINHA 13/IPhone 13 Pro Max - Grafite.png', 'bg-gray', 'Grafite')"></div>
-                                <div class="color-dot" style="background: #fcebc0;" onclick="changeProductColor(this, 'img/products/apple/LINHA 13/IPhone 13 Pro Max -  Dourado.png', 'bg-orange', 'Dourado')"></div>
-                                <div class="color-dot" style="background: #faf9f6;" onclick="changeProductColor(this, 'img/products/apple/LINHA 13/IPhone 13 Pro Max -  Prata.png', 'bg-teal', 'Prata')"></div>
-                                <div class="color-dot" style="background: #4e5b4e;" onclick="changeProductColor(this, 'img/products/apple/LINHA 13/IPhone 13 Pro Max - Verde Alpino.png', 'bg-teal', 'Verde Alpino')"></div>
+                                <div class="color-dot" style="background: #9ab5cf;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 13/IPhone 13 Pro Max - Azul Sierra.png', 'bg-blue', 'Azul Sierra')"></div>
+                                <div class="color-dot" style="background: #545652;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 13/IPhone 13 Pro Max - Grafite.png', 'bg-gray', 'Grafite')"></div>
+                                <div class="color-dot" style="background: #fcebc0;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 13/IPhone 13 Pro Max -  Dourado.png', 'bg-orange', 'Dourado')"></div>
+                                <div class="color-dot" style="background: #faf9f6;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 13/IPhone 13 Pro Max -  Prata.png', 'bg-teal', 'Prata')"></div>
+                                <div class="color-dot" style="background: #4e5b4e;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 13/IPhone 13 Pro Max - Verde Alpino.png', 'bg-teal', 'Verde Alpino')"></div>
                             </div>
                             <h3 class="card-title">iPhone 13 Pro Max</h3>
                             <p class="card-tagline">Topo da linha com maior bateria e desempenho máximo da geração. Ideal para quem quer máximo desempenho e autonomia.</p>
@@ -473,15 +475,15 @@
                     <!-- iPhone 13 Pro -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-gray">
-                            <img src="img/products/apple/LINHA 13/IPhone 13 Pro - Grafite.png" alt="iPhone 13 Pro">
+                            <img src="img/products/apple/iPhone/LINHA 13/IPhone 13 Pro - Grafite.png" alt="iPhone 13 Pro">
                         </div>
                         <div class="card-info-wrap">
                             <div class="color-dots">
-                                <div class="color-dot" style="background: #545652;" onclick="changeProductColor(this, 'img/products/apple/LINHA 13/IPhone 13 Pro - Grafite.png', 'bg-gray', 'Grafite')"></div>
-                                <div class="color-dot" style="background: #9ab5cf;" onclick="changeProductColor(this, 'img/products/apple/LINHA 13/IPhone 13 Pro - Azul Sierra.png', 'bg-blue', 'Azul Sierra')"></div>
-                                <div class="color-dot" style="background: #fcebc0;" onclick="changeProductColor(this, 'img/products/apple/LINHA 13/IPhone 13 Pro - Dourado.png', 'bg-orange', 'Dourado')"></div>
-                                <div class="color-dot" style="background: #faf9f6;" onclick="changeProductColor(this, 'img/products/apple/LINHA 13/IPhone 13 Pro - Prata.png', 'bg-teal', 'Prata')"></div>
-                                <div class="color-dot" style="background: #4e5b4e;" onclick="changeProductColor(this, 'img/products/apple/LINHA 13/IPhone 13 Pro - Verde Alpino.png', 'bg-teal', 'Verde Alpino')"></div>
+                                <div class="color-dot" style="background: #545652;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 13/IPhone 13 Pro - Grafite.png', 'bg-gray', 'Grafite')"></div>
+                                <div class="color-dot" style="background: #9ab5cf;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 13/IPhone 13 Pro - Azul Sierra.png', 'bg-blue', 'Azul Sierra')"></div>
+                                <div class="color-dot" style="background: #fcebc0;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 13/IPhone 13 Pro - Dourado.png', 'bg-orange', 'Dourado')"></div>
+                                <div class="color-dot" style="background: #faf9f6;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 13/IPhone 13 Pro - Prata.png', 'bg-teal', 'Prata')"></div>
+                                <div class="color-dot" style="background: #4e5b4e;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 13/IPhone 13 Pro - Verde Alpino.png', 'bg-teal', 'Verde Alpino')"></div>
                             </div>
                             <h3 class="card-title">iPhone 13 Pro</h3>
                             <p class="card-tagline">Modelo premium com tela ProMotion e câmeras avançadas para fotos e vídeos de alta qualidade. Ideal para usuários avançados e criadores de conteúdo.</p>
@@ -495,15 +497,15 @@
                     <!-- iPhone 13 -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-gray">
-                            <img src="img/products/apple/LINHA 13/IPhone 13 - Meia-noite.png" alt="iPhone 13">
+                            <img src="img/products/apple/iPhone/LINHA 13/IPhone 13 - Meia-noite.png" alt="iPhone 13">
                         </div>
                         <div class="card-info-wrap">
                             <div class="color-dots">
-                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/LINHA 13/IPhone 13 - Meia-noite.png', 'bg-gray', 'Meia-noite')"></div>
-                                <div class="color-dot" style="background: #a7c1e3;" onclick="changeProductColor(this, 'img/products/apple/LINHA 13/IPhone 13 - Azul.png', 'bg-blue', 'Azul')"></div>
-                                <div class="color-dot" style="background: #faf9f6;" onclick="changeProductColor(this, 'img/products/apple/LINHA 13/IPhone 13 - Estelar.png', 'bg-teal', 'Estelar')"></div>
-                                <div class="color-dot" style="background: #f8c8dc;" onclick="changeProductColor(this, 'img/products/apple/LINHA 13/IPhone 13 - Rosa.png', 'bg-pink', 'Rosa')"></div>
-                                <div class="color-dot" style="background: #4e5b4e;" onclick="changeProductColor(this, 'img/products/apple/LINHA 13/IPhone 13 - Verde.png', 'bg-teal', 'Verde')"></div>
+                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 13/IPhone 13 - Meia-noite.png', 'bg-gray', 'Meia-noite')"></div>
+                                <div class="color-dot" style="background: #a7c1e3;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 13/IPhone 13 - Azul.png', 'bg-blue', 'Azul')"></div>
+                                <div class="color-dot" style="background: #faf9f6;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 13/IPhone 13 - Estelar.png', 'bg-teal', 'Estelar')"></div>
+                                <div class="color-dot" style="background: #f8c8dc;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 13/IPhone 13 - Rosa.png', 'bg-pink', 'Rosa')"></div>
+                                <div class="color-dot" style="background: #4e5b4e;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 13/IPhone 13 - Verde.png', 'bg-teal', 'Verde')"></div>
                             </div>
                             <h3 class="card-title">iPhone 13</h3>
                             <p class="card-tagline">Modelo equilibrado com chip A15 Bionic, oferecendo ótimo desempenho e fluidez no uso diário. Ideal para quem quer economizar sem abrir mão de performance.</p>
@@ -517,14 +519,14 @@
                     <!-- iPhone 12 Pro Max -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-blue">
-                            <img src="img/products/apple/LINHA 12/IPhone 12 Pro Max - Azul Pacífico.png" alt="iPhone 12 Pro Max">
+                            <img src="img/products/apple/iPhone/LINHA 12/IPhone 12 Pro Max - Azul Pacífico.png" alt="iPhone 12 Pro Max">
                         </div>
                         <div class="card-info-wrap">
                             <div class="color-dots">
-                                <div class="color-dot" style="background: #2b3a4a;" onclick="changeProductColor(this, 'img/products/apple/LINHA 12/IPhone 12 Pro Max - Azul Pacífico.png', 'bg-blue', 'Azul Pacífico')"></div>
-                                <div class="color-dot" style="background: #515151;" onclick="changeProductColor(this, 'img/products/apple/LINHA 12/IPhone 12 Pro Max - Grafite.png', 'bg-gray', 'Grafite')"></div>
-                                <div class="color-dot" style="background: #fcebc0;" onclick="changeProductColor(this, 'img/products/apple/LINHA 12/IPhone 12 Pro Max  - Dourado.png', 'bg-orange', 'Dourado')"></div>
-                                <div class="color-dot" style="background: #faf9f6;" onclick="changeProductColor(this, 'img/products/apple/LINHA 12/IPhone 12 Pro Max - Prata.png', 'bg-teal', 'Prata')"></div>
+                                <div class="color-dot" style="background: #2b3a4a;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 12/IPhone 12 Pro Max - Azul Pacífico.png', 'bg-blue', 'Azul Pacífico')"></div>
+                                <div class="color-dot" style="background: #515151;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 12/IPhone 12 Pro Max - Grafite.png', 'bg-gray', 'Grafite')"></div>
+                                <div class="color-dot" style="background: #fcebc0;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 12/IPhone 12 Pro Max  - Dourado.png', 'bg-orange', 'Dourado')"></div>
+                                <div class="color-dot" style="background: #faf9f6;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 12/IPhone 12 Pro Max - Prata.png', 'bg-teal', 'Prata')"></div>
                             </div>
                             <h3 class="card-title">iPhone 12 Pro Max</h3>
                             <p class="card-tagline">Topo da linha com melhor câmera e maior autonomia de bateria da geração. Ideal para quem busca melhor desempenho dentro da linha 12.</p>
@@ -538,14 +540,14 @@
                     <!-- iPhone 12 Pro -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-gray">
-                            <img src="img/products/apple/LINHA 12/IPhone 12 Pro - Grafite.png" alt="iPhone 12 Pro">
+                            <img src="img/products/apple/iPhone/LINHA 12/IPhone 12 Pro - Grafite.png" alt="iPhone 12 Pro">
                         </div>
                         <div class="card-info-wrap">
                             <div class="color-dots">
-                                <div class="color-dot" style="background: #515151;" onclick="changeProductColor(this, 'img/products/apple/LINHA 12/IPhone 12 Pro - Grafite.png', 'bg-gray', 'Grafite')"></div>
-                                <div class="color-dot" style="background: #2b3a4a;" onclick="changeProductColor(this, 'img/products/apple/LINHA 12/IPhone 12 Pro - Azul Pacífico.png', 'bg-blue', 'Azul Pacífico')"></div>
-                                <div class="color-dot" style="background: #fcebc0;" onclick="changeProductColor(this, 'img/products/apple/LINHA 12/IPhone 12 Pro - Dourado.png', 'bg-orange', 'Dourado')"></div>
-                                <div class="color-dot" style="background: #faf9f6;" onclick="changeProductColor(this, 'img/products/apple/LINHA 12/IPhone 12 Pro - Prata.png', 'bg-teal', 'Prata')"></div>
+                                <div class="color-dot" style="background: #515151;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 12/IPhone 12 Pro - Grafite.png', 'bg-gray', 'Grafite')"></div>
+                                <div class="color-dot" style="background: #2b3a4a;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 12/IPhone 12 Pro - Azul Pacífico.png', 'bg-blue', 'Azul Pacífico')"></div>
+                                <div class="color-dot" style="background: #fcebc0;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 12/IPhone 12 Pro - Dourado.png', 'bg-orange', 'Dourado')"></div>
+                                <div class="color-dot" style="background: #faf9f6;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 12/IPhone 12 Pro - Prata.png', 'bg-teal', 'Prata')"></div>
                             </div>
                             <h3 class="card-title">iPhone 12 Pro</h3>
                             <p class="card-tagline">Modelo premium com acabamento refinado e câmeras mais avançadas para fotos de alta qualidade. Ideal para quem quer melhor construção e qualidade em fotos.</p>
@@ -559,15 +561,15 @@
                     <!-- iPhone 12 -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-gray">
-                            <img src="img/products/apple/LINHA 12/IPhone 12 - Preto.png" alt="iPhone 12">
+                            <img src="img/products/apple/iPhone/LINHA 12/IPhone 12 - Preto.png" alt="iPhone 12">
                         </div>
                         <div class="card-info-wrap">
                             <div class="color-dots">
-                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/LINHA 12/IPhone 12 - Preto.png', 'bg-gray', 'Preto')"></div>
-                                <div class="color-dot" style="background: #ffffff;" onclick="changeProductColor(this, 'img/products/apple/LINHA 12/IPhone 12 - Branco.png', 'bg-teal', 'Branco')"></div>
-                                <div class="color-dot" style="background: #a7c1e3;" onclick="changeProductColor(this, 'img/products/apple/LINHA 12/IPhone 12 - Azul.png', 'bg-blue', 'Azul')"></div>
-                                <div class="color-dot" style="background: #e6e6fa;" onclick="changeProductColor(this, 'img/products/apple/LINHA 12/IPhone 12 - Roxo.png', 'bg-purple', 'Roxo')"></div>
-                                <div class="color-dot" style="background: #d5e5d5;" onclick="changeProductColor(this, 'img/products/apple/LINHA 12/IPhone 12 - Verde.png', 'bg-teal', 'Verde')"></div>
+                                <div class="color-dot" style="background: #1d1d1f;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 12/IPhone 12 - Preto.png', 'bg-gray', 'Preto')"></div>
+                                <div class="color-dot" style="background: #ffffff;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 12/IPhone 12 - Branco.png', 'bg-teal', 'Branco')"></div>
+                                <div class="color-dot" style="background: #a7c1e3;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 12/IPhone 12 - Azul.png', 'bg-blue', 'Azul')"></div>
+                                <div class="color-dot" style="background: #e6e6fa;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 12/IPhone 12 - Roxo.png', 'bg-purple', 'Roxo')"></div>
+                                <div class="color-dot" style="background: #d5e5d5;" onclick="changeProductColor(this, 'img/products/apple/iPhone/LINHA 12/IPhone 12 - Verde.png', 'bg-teal', 'Verde')"></div>
                             </div>
                             <h3 class="card-title">iPhone 12</h3>
                             <p class="card-tagline">Conta com chip A14 Bionic, tela OLED e suporte ao 5G, oferecendo bom desempenho e qualidade de imagem. Ideal para quem quer um iPhone acessível para uso básico e intermediário.</p>
@@ -581,228 +583,72 @@
                 </div>
             </div>
 
-
-            <!-- Xiaomi Carousel -->
-            <div id="carousel-xiaomi" class="carousel-wrapper">
-                <div class="nav-arrow nav-prev" onclick="scrollCarousel('carousel-xiaomi', -340)"><i class="fas fa-chevron-left"></i></div>
-                <div class="nav-arrow nav-next" onclick="scrollCarousel('carousel-xiaomi', 340)"><i class="fas fa-chevron-right"></i></div>
+            <!-- iPad Carousel -->
+            <div id="carousel-ipad" class="carousel-wrapper">
+                <div class="nav-arrow nav-prev" onclick="scrollCarousel('carousel-ipad', -340)"><i class="fas fa-chevron-left"></i></div>
+                <div class="nav-arrow nav-next" onclick="scrollCarousel('carousel-ipad', 340)"><i class="fas fa-chevron-right"></i></div>
                 <div class="carousel-container">
-                    <!-- Redmi Note 15 Pro Plus -->
-                    <div class="product-card-v5">
-                        <div class="card-image-wrap bg-purple">
-                            <img src="img/products/xiaomi/base.png" alt="Redmi Note 15 Pro Plus">
-                        </div>
-                        <div class="card-info-wrap">
-                            <div class="color-dots">
-                                <div class="color-dot" style="background: #a291ad;"></div>
-                                <div class="color-dot" style="background: #1d1d1f;"></div>
-                            </div>
-                            <h3 class="card-title">Redmi Note 15 Pro Plus</h3>
-                            <p class="card-tagline">O ápice da linha Redmi. Câmera de 200MP e 5G.</p>
-                            <p class="card-specs">512GB | 12GB RAM | Roxa</p>
-                            <div class="card-actions">
-                                <a href="https://wa.me/5511945401687" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Redmi Note 15 Pro -->
-                    <div class="product-card-v5">
-                        <div class="card-image-wrap bg-blue">
-                            <img src="img/products/xiaomi/base.png" alt="Redmi Note 15 Pro" style="filter: hue-rotate(180deg);">
-                        </div>
-                        <div class="card-info-wrap">
-                            <div class="color-dots">
-                                <div class="color-dot" style="background: #1d1d1f;"></div>
-                                <div class="color-dot" style="background: #d1d1d1;"></div>
-                            </div>
-                            <h3 class="card-title">Redmi Note 15 Pro</h3>
-                            <p class="card-tagline">Equilíbrio perfeito entre potência e design.</p>
-                            <p class="card-specs">256GB e 512GB | Cinza</p>
-                            <div class="card-actions">
-                                <a href="https://wa.me/5511945401687" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Redmi Note 14 Pro -->
-                    <div class="product-card-v5">
-                        <div class="card-image-wrap bg-purple">
-                            <img src="img/products/xiaomi/base.png" alt="Redmi Note 14 Pro" style="filter: saturate(1.5);">
-                        </div>
-                        <div class="card-info-wrap">
-                            <div class="color-dots">
-                                <div class="color-dot" style="background: #a291ad;"></div>
-                                <div class="color-dot" style="background: #d1d1d1;"></div>
-                            </div>
-                            <h3 class="card-title">Redmi Note 14 Pro</h3>
-                            <p class="card-tagline">Resistência e beleza em um só lugar.</p>
-                            <p class="card-specs">256GB | Roxa</p>
-                            <div class="card-actions">
-                                <a href="https://wa.me/5511945401687" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Redmi 15 / 15C -->
-                    <div class="product-card-v5">
-                        <div class="card-image-wrap bg-teal">
-                            <img src="img/products/xiaomi/base.png" alt="Redmi 15 Series">
-                        </div>
-                        <div class="card-info-wrap">
-                            <div class="color-dots">
-                                <div class="color-dot" style="background: #1d1d1f;"></div>
-                                <div class="color-dot" style="background: #4ab6b0;"></div>
-                            </div>
-                            <h3 class="card-title">Redmi 15 / 15C</h3>
-                            <p class="card-tagline">Bateria de longa duração para o seu dia.</p>
-                            <p class="card-specs">128GB a 256GB | Preto</p>
-                            <div class="card-actions">
-                                <a href="https://wa.me/5511945401687" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Redmi A7 Pro / A5 -->
-                    <div class="product-card-v5">
-                        <div class="card-image-wrap bg-orange">
-                            <img src="img/products/xiaomi/base.png" alt="Redmi A Series" style="filter: hue-rotate(45deg);">
-                        </div>
-                        <div class="card-info-wrap">
-                            <div class="color-dots">
-                                <div class="color-dot" style="background: #d1d1d1;"></div>
-                                <div class="color-dot" style="background: #e6a673;"></div>
-                            </div>
-                            <h3 class="card-title">Redmi A7 / A5</h3>
-                            <p class="card-tagline">Essencial e confiável. Simplesmente o que você precisa.</p>
-                            <p class="card-specs">64GB e 128GB | Prata</p>
-                            <div class="card-actions">
-                                <a href="https://wa.me/5511945401687" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- POCO Carousel -->
-            <div id="carousel-poco" class="carousel-wrapper">
-                <div class="nav-arrow nav-prev" onclick="scrollCarousel('carousel-poco', -340)"><i class="fas fa-chevron-left"></i></div>
-                <div class="nav-arrow nav-next" onclick="scrollCarousel('carousel-poco', 340)"><i class="fas fa-chevron-right"></i></div>
-                <div class="carousel-container">
-                               <!-- POCO X8 Pro (Individual) -->
+                    <!-- iPad Pro M4 -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-gray">
-                            <img src="img/products/poco/x8_pro.png" alt="POCO X8 Pro">
+                            <img src="img/products/apple/iPad/ipad_pro_m4.png" alt="iPad Pro M4">
                         </div>
                         <div class="card-info-wrap">
-                            <div class="color-dots">
-                                <div class="color-dot" style="background: #1d1d1f;"></div>
-                                <div class="color-dot" style="background: #d1d1d1;"></div>
-                            </div>
-                            <h3 class="card-title">POCO X8 Pro</h3>
-                            <p class="card-tagline">Performance absurda. O novo rei do custo-benefício.</p>
-                            <p class="card-specs">256GB a 512GB | Snapdragon 8 Gen 4 | Preto</p>
+                            <h3 class="card-title">iPad Pro M4</h3>
+                            <p class="card-tagline">O iPad mais fino e potente de todos. Tela Ultra Retina XDR Tandem OLED e chip M4.</p>
+                            <p class="card-specs">256GB, 512GB, 1TB e 2TB | Space Black</p>
                             <div class="card-actions">
                                 <a href="https://wa.me/5511945401687" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- POCO X7 Pro (Individual) -->
+                    <!-- iPad Air M2 -->
                     <div class="product-card-v5">
-                        <div class="card-image-wrap bg-teal">
-                            <img src="img/products/poco/base.png" alt="POCO X7 Pro" style="filter: hue-rotate(90deg);">
+                        <div class="card-image-wrap bg-purple">
+                            <img src="img/products/apple/iPad/ipad_pro_m4.png" alt="iPad Air M2" style="filter: hue-rotate(140deg) brightness(0.9);">
                         </div>
                         <div class="card-info-wrap">
-                            <div class="color-dots">
-                                <div class="color-dot" style="background: #4ab6b0;"></div>
-                                <div class="color-dot" style="background: #1d1d1f;"></div>
-                            </div>
-                            <h3 class="card-title">POCO X7 Pro</h3>
-                            <p class="card-tagline">Tecnologia 5G e tela AMOLED premium.</p>
-                            <p class="card-specs">256GB | 8GB RAM | Verde</p>
+                            <h3 class="card-title">iPad Air M2</h3>
+                            <p class="card-tagline">Agora disponível em 11 e 13 polegadas. Potência do chip M2 para estudos e trabalho.</p>
+                            <p class="card-specs">128GB, 256GB, 512GB e 1TB | Purple</p>
                             <div class="card-actions">
                                 <a href="https://wa.me/5511945401687" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <!-- POCO F Series (Individual) -->
+            <!-- Mac Carousel -->
+            <div id="carousel-mac" class="carousel-wrapper">
+                <div class="nav-arrow nav-prev" onclick="scrollCarousel('carousel-mac', -340)"><i class="fas fa-chevron-left"></i></div>
+                <div class="nav-arrow nav-next" onclick="scrollCarousel('carousel-mac', 340)"><i class="fas fa-chevron-right"></i></div>
+                <div class="carousel-container">
+                    <!-- MacBook Pro M4 -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-gray">
-                            <img src="img/products/poco/base.png" alt="POCO F Series" style="filter: brightness(1.2);">
+                            <img src="img/products/apple/Mac/macbook_pro.png" alt="MacBook Pro M4">
                         </div>
                         <div class="card-info-wrap">
-                            <div class="color-dots">
-                                <div class="color-dot" style="background: #1d1d1f;"></div>
-                            </div>
-                            <h3 class="card-title">POCO F8 / F7 Pro</h3>
-                            <p class="card-tagline">Potência de herói. Para quem não aceita menos que o topo.</p>
-                            <p class="card-specs">512GB | Performance Gaming | Preto</p>
-                            <div class="card-actions">
-                                <a href="https://wa.me/5511945401687" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Realme Carousel -->
-            <div id="carousel-realme" class="carousel-wrapper">
-                <div class="nav-arrow nav-prev" onclick="scrollCarousel('carousel-realme', -340)"><i class="fas fa-chevron-left"></i></div>
-                <div class="nav-arrow nav-next" onclick="scrollCarousel('carousel-realme', 340)"><i class="fas fa-chevron-right"></i></div>
-                <div class="carousel-container">
-                    <!-- Realme 14 Pro Plus (Individual) -->
-                    <div class="product-card-v5">
-                        <div class="card-image-wrap bg-orange">
-                            <img src="img/products/realme/14_pro_plus.png" alt="Realme 14 Pro Plus">
-                        </div>
-                        <div class="card-info-wrap">
-                            <div class="color-dots">
-                                <div class="color-dot" style="background: #ffc800;"></div>
-                                <div class="color-dot" style="background: #ffffff;"></div>
-                                <div class="color-dot" style="background: #1d1d1f;"></div>
-                            </div>
-                            <h3 class="card-title">Realme 14 Pro Plus</h3>
-                            <p class="card-tagline">Design inspirado em relógios de luxo. Fotografia master.</p>
-                            <p class="card-specs">512GB | 12GB RAM | Amarelo Luxo</p>
+                            <h3 class="card-title">MacBook Pro M4</h3>
+                            <p class="card-tagline">O notebook profissional definitivo. Performance absurda, tela Liquid Retina XDR.</p>
+                            <p class="card-specs">512GB, 1TB e 2TB SSD | Space Black</p>
                             <div class="card-actions">
                                 <a href="https://wa.me/5511945401687" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Realme C75 / C75X (Individual) -->
-                    <div class="product-card-v5">
-                        <div class="card-image-wrap bg-blue">
-                            <img src="img/products/realme/base.png" alt="Realme C75X" style="filter: hue-rotate(200deg);">
-                        </div>
-                        <div class="card-info-wrap">
-                            <div class="color-dots">
-                                <div class="color-dot" style="background: #a7c1e3;"></div>
-                                <div class="color-dot" style="background: #1d1d1f;"></div>
-                            </div>
-                            <h3 class="card-title">Realme C75 / C75X</h3>
-                            <p class="card-tagline">O campeão de durabilidade. Bateria extrema.</p>
-                            <p class="card-specs">128GB e 256GB | Azul Névoa</p>
-                            <div class="card-actions">
-                                <a href="https://wa.me/5511945401687" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Realme Note 70 / 60 (Individual) -->
+                    <!-- MacBook Air M3 -->
                     <div class="product-card-v5">
                         <div class="card-image-wrap bg-teal">
-                            <img src="img/products/realme/base.png" alt="Realme Note Series" style="filter: hue-rotate(120deg);">
+                            <img src="img/products/apple/Mac/macbook_pro.png" alt="MacBook Air M3" style="filter: brightness(1.25) contrast(0.9);">
                         </div>
                         <div class="card-info-wrap">
-                            <div class="color-dots">
-                                <div class="color-dot" style="background: #1d1d1f;"></div>
-                                <div class="color-dot" style="background: #d1d1d1;"></div>
-                            </div>
-                            <h3 class="card-title">Realme Note 70 / 60</h3>
-                            <p class="card-tagline">Simplesmente resistente. Elegância para o dia a dia.</p>
-                            <p class="card-specs">128GB e 256GB | Preto</p>
+                            <h3 class="card-title">MacBook Air M3</h3>
+                            <p class="card-tagline">Incrivelmente fino e leve. Potência de sobra com chip M3 e bateria para até 18 horas.</p>
+                            <p class="card-specs">256GB e 512GB SSD | Starlight</p>
                             <div class="card-actions">
                                 <a href="https://wa.me/5511945401687" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
                             </div>
@@ -810,6 +656,150 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Apple Watch Carousel -->
+            <div id="carousel-watch" class="carousel-wrapper">
+                <div class="nav-arrow nav-prev" onclick="scrollCarousel('carousel-watch', -340)"><i class="fas fa-chevron-left"></i></div>
+                <div class="nav-arrow nav-next" onclick="scrollCarousel('carousel-watch', 340)"><i class="fas fa-chevron-right"></i></div>
+                <div class="carousel-container">
+                    <!-- Apple Watch Ultra 3 -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-gray">
+                            <img src="img/products/apple/Apple Watch/Apple Watch Ultra 3/Ultra 3 - Titanio Natural.png" alt="Apple Watch Ultra 3">
+                        </div>
+                        <div class="card-info-wrap">
+                            <div class="color-dots">
+                                <div class="color-dot" style="background: #e3dfd5;" onclick="changeProductColor(this, 'img/products/apple/Apple Watch/Apple Watch Ultra 3/Ultra 3 - Titanio Natural.png', 'bg-gray', 'Titânio Natural')"></div>
+                                <div class="color-dot" style="background: #2e3033;" onclick="changeProductColor(this, 'img/products/apple/Apple Watch/Apple Watch Ultra 3/Ultra 3 - Titanio Preto.png', 'bg-gray', 'Titânio Preto')"></div>
+                            </div>
+                            <h3 class="card-title">Apple Watch Ultra 3</h3>
+                            <p class="card-tagline">O relógio definitivo para atletas e aventureiros. Caixa de titânio resistente e tela Retina Sempre Ativa de alto brilho.</p>
+                            <p class="card-specs">49mm | GPS + Cellular | Titânio Natural</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511945401687" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Apple Watch Series 11 -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-gray">
+                            <img src="img/products/apple/Apple Watch/Apple Watch Series 11/Series 11 - Aluminio Preto Brilhante.png" alt="Apple Watch Series 11">
+                        </div>
+                        <div class="card-info-wrap">
+                            <div class="color-dots">
+                                <div class="color-dot" style="background: #111111;" onclick="changeProductColor(this, 'img/products/apple/Apple Watch/Apple Watch Series 11/Series 11 - Aluminio Preto Brilhante.png', 'bg-gray', 'Alumínio Preto Brilhante')"></div>
+                                <div class="color-dot" style="background: #e3e4e6;" onclick="changeProductColor(this, 'img/products/apple/Apple Watch/Apple Watch Series 11/Series 11 - Aluminio Prateado.png', 'bg-gray', 'Alumínio Prateado')"></div>
+                                <div class="color-dot" style="background: #fadcd9;" onclick="changeProductColor(this, 'img/products/apple/Apple Watch/Apple Watch Series 11/Series 11 - Alumimio Ouro Rosa.png', 'bg-pink', 'Alumínio Ouro Rosa')"></div>
+                                <div class="color-dot" style="background: #57585a;" onclick="changeProductColor(this, 'img/products/apple/Apple Watch/Apple Watch Series 11/Series 11 - Aluminio Cinza Espacial.png', 'bg-gray', 'Alumínio Cinza Espacial')"></div>
+                                <div class="color-dot" style="background: #d1cfca;" onclick="changeProductColor(this, 'img/products/apple/Apple Watch/Apple Watch Series 11/Series 11 - Titanio Natural.png', 'bg-gray', 'Titânio Natural')"></div>
+                                <div class="color-dot" style="background: #e5c158;" onclick="changeProductColor(this, 'img/products/apple/Apple Watch/Apple Watch Series 11/Series 11 - Titanio Dourado.png', 'bg-orange', 'Titânio Dourado')"></div>
+                                <div class="color-dot" style="background: #42454a;" onclick="changeProductColor(this, 'img/products/apple/Apple Watch/Apple Watch Series 11/Series 11 - Titanio Ardósia.png', 'bg-gray', 'Titânio Ardósia')"></div>
+                            </div>
+                            <h3 class="card-title">Apple Watch Series 11</h3>
+                            <p class="card-tagline">Design ainda mais fino e elegante. Tela ampla de OLED e recursos aprimorados de eletrocardiograma e monitoramento de saúde.</p>
+                            <p class="card-specs">42mm e 46mm | GPS | Alumínio Preto Brilhante</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511945401687" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Apple Watch SE 3 -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-gray">
+                            <img src="img/products/apple/Apple Watch/Apple Watch SE 3/SE 3 - Aluminio Estelar.png" alt="Apple Watch SE 3">
+                        </div>
+                        <div class="card-info-wrap">
+                            <div class="color-dots">
+                                <div class="color-dot" style="background: #e2dcd3;" onclick="changeProductColor(this, 'img/products/apple/Apple Watch/Apple Watch SE 3/SE 3 - Aluminio Estelar.png', 'bg-gray', 'Alumínio Estelar')"></div>
+                                <div class="color-dot" style="background: #242831;" onclick="changeProductColor(this, 'img/products/apple/Apple Watch/Apple Watch SE 3/SE 3 - Aluminio Meia-Noite.png', 'bg-gray', 'Alumínio Meia-Noite')"></div>
+                            </div>
+                            <h3 class="card-title">Apple Watch SE 3</h3>
+                            <p class="card-tagline">O melhor custo-benefício. Recursos de acompanhamento de exercícios, detecção de queda e notificações de ritmo cardíaco.</p>
+                            <p class="card-specs">40mm e 44mm | GPS | Alumínio Estelar</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511945401687" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AirPods Carousel -->
+            <div id="carousel-airpods" class="carousel-wrapper">
+                <div class="nav-arrow nav-prev" onclick="scrollCarousel('carousel-airpods', -340)"><i class="fas fa-chevron-left"></i></div>
+                <div class="nav-arrow nav-next" onclick="scrollCarousel('carousel-airpods', 340)"><i class="fas fa-chevron-right"></i></div>
+                <div class="carousel-container">
+                    <!-- AirPods Pro 2 -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-teal">
+                            <img src="img/products/apple/AirPods/airpods_pro.png" alt="AirPods Pro 2">
+                        </div>
+                        <div class="card-info-wrap">
+                            <h3 class="card-title">AirPods Pro 2</h3>
+                            <p class="card-tagline">Áudio adaptável, cancelamento de ruído 2x melhor e estojo MagSafe USB-C.</p>
+                            <p class="card-specs">Chip H2 | Áudio Espacial Personalizado</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511945401687" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AirPods Max -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-purple">
+                            <img src="img/products/apple/AirPods/airpods_pro.png" alt="AirPods Max" style="filter: hue-rotate(180deg) brightness(0.85);">
+                        </div>
+                        <div class="card-info-wrap">
+                            <h3 class="card-title">AirPods Max</h3>
+                            <p class="card-tagline">O equilíbrio perfeito entre áudio de alta fidelidade e a magia intuitiva dos AirPods.</p>
+                            <p class="card-specs">Over-ear | Cancelamento Ativo | Space Grey</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511945401687" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Acessórios Carousel -->
+            <div id="carousel-acessorios" class="carousel-wrapper">
+                <div class="nav-arrow nav-prev" onclick="scrollCarousel('carousel-acessorios', -340)"><i class="fas fa-chevron-left"></i></div>
+                <div class="nav-arrow nav-next" onclick="scrollCarousel('carousel-acessorios', 340)"><i class="fas fa-chevron-right"></i></div>
+                <div class="carousel-container">
+                    <!-- Carregador MagSafe -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-gray">
+                            <img src="img/products/apple/Acessórios Apple/magsafe_charger.png" alt="Carregador MagSafe">
+                        </div>
+                        <div class="card-info-wrap">
+                            <h3 class="card-title">Carregador MagSafe</h3>
+                            <p class="card-tagline">Encaixe magnético perfeito para carregamento rápido e sem fio de até 15W.</p>
+                            <p class="card-specs">Conexão USB-C | Alinhamento Magnético</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511945401687" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Capa de Silicone MagSafe -->
+                    <div class="product-card-v5">
+                        <div class="card-image-wrap bg-blue">
+                            <img src="img/products/apple/Acessórios Apple/magsafe_charger.png" alt="Capa de Silicone MagSafe" style="filter: hue-rotate(200deg) brightness(0.75);">
+                        </div>
+                        <div class="card-info-wrap">
+                            <h3 class="card-title">Capa Silicone MagSafe</h3>
+                            <p class="card-tagline">Toque suave de silicone com ímãs integrados para carregamento rápido e proteção extra.</p>
+                            <p class="card-specs">Disponível para Linhas 13, 14, 15, 16 e 17</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/5511945401687" class="btn-consult"><i class="fab fa-whatsapp"></i> Consultar o valor</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
     <div class="section-divider"></div>
@@ -993,7 +983,7 @@
                 <div class="footer-column">
                     <div class="logo">TOTAL<span> CELULARES</span></div>
                     <p class="footer-description">
-                        Conectando você ao melhor da tecnologia Aparelhos. Sua loja de confiança no coração de São Paulo para iPhones, Xiaomi e muito mais.
+                        Conectando você ao melhor da tecnologia Apple. Sua loja de confiança no coração de São Paulo para iPhones e acessórios premium.
                     </p>
                     <div class="footer-socials">
                         <a href="https://www.instagram.com/totalcelulares1?igsh=MTBzczU4NzM3bXF2Zg==" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -1013,14 +1003,16 @@
                     </ul>
                 </div>
 
-                <!-- Coluna 3: Principais Marcas -->
+                <!-- Coluna 3: Produtos Apple -->
                 <div class="footer-column">
-                    <h3>Principais Marcas</h3>
+                    <h3>Produtos Apple</h3>
                     <ul class="footer-links">
-                        <li><a href="#" onclick="switchCarousel('apple')">iPhone</a></li>
-                        <li><a href="#" onclick="switchCarousel('xiaomi')">Xiaomi</a></li>
-                        <li><a href="#" onclick="switchCarousel('poco')">POCO</a></li>
-                        <li><a href="#" onclick="switchCarousel('realme')">Realme</a></li>
+                        <li><a href="#catalogo" onclick="switchCarousel('iphone')">iPhone</a></li>
+                        <li><a href="#catalogo" onclick="switchCarousel('ipad')">iPad</a></li>
+                        <li><a href="#catalogo" onclick="switchCarousel('mac')">Mac</a></li>
+                        <li><a href="#catalogo" onclick="switchCarousel('watch')">Apple Watch</a></li>
+                        <li><a href="#catalogo" onclick="switchCarousel('airpods')">AirPods</a></li>
+                        <li><a href="#catalogo" onclick="switchCarousel('acessorios')">Acessórios Apple</a></li>
                     </ul>
                 </div>
 
