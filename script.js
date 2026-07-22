@@ -14,17 +14,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 2. Mobile Menu Toggle
-    mobileMenuBtn.addEventListener('click', () => {
-        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '100%';
-        navLinks.style.left = '0';
-        navLinks.style.width = '100%';
-        navLinks.style.background = 'rgba(0, 46, 43, 0.95)';
-        navLinks.style.padding = '2rem';
-        navLinks.style.textAlign = 'center';
-        navLinks.style.backdropFilter = 'blur(10px)';
+    const menuIcon = mobileMenuBtn.querySelector('i');
+
+    function closeMobileMenu() {
+        navLinks.classList.remove('mobile-open');
+        if (menuIcon) {
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+        }
+    }
+
+    function openMobileMenu() {
+        navLinks.classList.add('mobile-open');
+        if (menuIcon) {
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-times');
+        }
+    }
+
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = navLinks.classList.contains('mobile-open');
+        isOpen ? closeMobileMenu() : openMobileMenu();
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!header.contains(e.target)) {
+            closeMobileMenu();
+        }
     });
 
     // 3. Smooth Scrolling
@@ -38,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 // Close mobile menu if open
                 if (window.innerWidth <= 968) {
-                    navLinks.style.display = 'none';
+                    closeMobileMenu();
                 }
             }
         });

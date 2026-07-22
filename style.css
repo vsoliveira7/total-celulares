@@ -117,6 +117,50 @@ nav {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.mobile-menu-btn:hover {
+    color: var(--primary);
+}
+
+/* Mobile Nav Dropdown */
+.nav-links.mobile-open {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 46, 43, 0.97);
+    backdrop-filter: blur(20px);
+    padding: 1.5rem 2rem 2rem;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--glass-border);
+    animation: slideDown 0.25s ease;
+    z-index: 999;
+}
+
+.nav-links.mobile-open li a {
+    display: block;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links.mobile-open li a:hover {
+    background: rgba(242, 29, 38, 0.12);
+    color: var(--primary);
+    padding-left: 1.5rem;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 /* Hero Section */
@@ -509,20 +553,133 @@ footer {
     background: var(--primary);
 }
 
-/* Responsive */
+/* =========================================
+   RESPONSIVE — Tablet (≤968px)
+   ========================================= */
 @media (max-width: 968px) {
     .hero {
         flex-direction: column;
         text-align: center;
         height: auto;
-        padding-bottom: 50px;
+        padding-top: 100px;
+        padding-bottom: 60px;
     }
-    .hero h1 { font-size: 3rem; }
+    .hero h1 { font-size: 3.2rem; }
     .hero p { margin: 0 auto 2.5rem; }
     .hero-btns { justify-content: center; }
     .hero-image { margin-top: 3rem; }
     .nav-links { display: none; }
     .mobile-menu-btn { display: block; }
+
+    /* Carousel arrows always visible on touch devices */
+    .nav-arrow {
+        opacity: 1;
+        background: rgba(255, 255, 255, 0.15);
+        color: white;
+        border-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(8px);
+        width: 38px;
+        height: 38px;
+    }
+    .nav-prev { left: 0; }
+    .nav-next { right: 0; }
+
+    /* Product cards slightly narrower */
+    .product-card-v5 {
+        flex: 0 0 280px;
+    }
+
+    .section-title h2 { font-size: 2.2rem; }
+}
+
+/* =========================================
+   RESPONSIVE — Mobile (≤600px)
+   ========================================= */
+@media (max-width: 600px) {
+    .container {
+        padding: 0 1.25rem;
+    }
+
+    /* Hero */
+    .hero {
+        padding-top: 90px;
+        padding-bottom: 50px;
+    }
+    .hero h1 { font-size: 2.4rem; }
+    .hero p  { font-size: 1rem; }
+    .hero-btns {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .hero-btns .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .hero-image img {
+        max-width: 80%;
+    }
+
+    /* Sections */
+    section { padding: 60px 0; }
+    .section-title h2 { font-size: 1.9rem; }
+    .section-title .underline { margin: 0.75rem auto 0; }
+
+    /* Catalog tabs wrap nicely */
+    .catalog-tabs {
+        gap: 0.6rem;
+    }
+    .catalog-tab {
+        padding: 0.65rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    /* Search placeholder shortened via attr override isn't possible in CSS;
+       so we keep it readable by ensuring the box doesn't shrink */
+    .catalog-search-wrap { max-width: 100%; }
+    .search-box input { font-size: 0.9rem; }
+
+    /* Product cards full-ish width */
+    .product-card-v5 {
+        flex: 0 0 calc(100vw - 3.5rem);
+        max-width: 340px;
+    }
+    .product-card-v5 .card-image-wrap {
+        height: 240px;
+    }
+
+    /* Carousel padding so cards are centered */
+    .carousel-container {
+        padding: 1.5rem 1.75rem;
+    }
+
+    /* Feedback cards */
+    .feedback-card {
+        padding: 1.75rem;
+    }
+    .feedback-carousel-wrapper {
+        padding: 0;
+    }
+    .prev-btn { left: 0; }
+    .next-btn { right: 0; }
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 0.85rem;
+    }
+
+    /* Services */
+    .service-item {
+        padding: 1.75rem 1.5rem;
+    }
+
+    /* Footer */
+    .footer-grid {
+        gap: 2.5rem;
+    }
+    footer {
+        padding: 60px 0 24px;
+    }
 }
 
 /* Feedbacks Carousel */
@@ -909,7 +1066,8 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .product-card-v4 {
+    .product-card-v4,
+    .product-card-v5 {
         flex: 0 0 280px;
     }
 }
