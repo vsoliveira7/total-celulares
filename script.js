@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function closeMobileMenu() {
         navLinks.classList.remove('mobile-open');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        mobileMenuBtn.setAttribute('aria-label', 'Abrir menu');
         if (menuIcon) {
             menuIcon.classList.remove('fa-times');
             menuIcon.classList.add('fa-bars');
@@ -45,6 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function openMobileMenu() {
         navLinks.classList.add('mobile-open');
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        mobileMenuBtn.setAttribute('aria-label', 'Fechar menu');
         if (menuIcon) {
             menuIcon.classList.remove('fa-bars');
             menuIcon.classList.add('fa-times');
@@ -55,6 +59,21 @@ document.addEventListener('DOMContentLoaded', () => {
         e.stopPropagation();
         const isOpen = navLinks.classList.contains('mobile-open');
         isOpen ? closeMobileMenu() : openMobileMenu();
+    });
+
+    header.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navLinks.classList.contains('mobile-open')) {
+            closeMobileMenu();
+            mobileMenuBtn.focus();
+        }
+    });
+
+    header.addEventListener('focusout', (e) => {
+        if (!header.contains(e.relatedTarget)) closeMobileMenu();
+    });
+
+    window.matchMedia('(max-width: 968px)').addEventListener('change', () => {
+        closeMobileMenu();
     });
 
     // Close menu when clicking outside
@@ -114,27 +133,42 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 6. WhatsApp Link Logic (Updated for Individual Cards)
-    const whatsappLinks = document.querySelectorAll('a[href^="https://wa.me/"]');
-    whatsappLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            const productCard = e.target.closest('.product-card-v5');
-            const productName = productCard?.querySelector('.card-title')?.innerText || 'um produto do catálogo';
-            const message = encodeURIComponent(`Olá Total Celulares! Gostaria de consultar o valor do ${productName} que vi no site.`);
-            link.href = `https://wa.me/5511945401687?text=${message}`;
+    // Keep product links ready for clicks, keyboard activation and copying.
+    document.querySelectorAll('.product-card-v5').forEach(card => {
+        updateProductWhatsApp(card);
+        card.querySelector('.card-capacity')?.addEventListener('change', () => {
+            updateProductWhatsApp(card);
         });
     });
+
+    initializeFavorites();
+    // Each category starts with six products and expands without leaving the page.
+    document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'btn btn-outline catalog-show-more';
+        button.setAttribute('aria-controls', wrapper.id);
+        button.addEventListener('click', () => {
+            const previousLimit = Number(wrapper.dataset.visibleLimit || 6);
+            wrapper.dataset.visibleLimit = String(previousLimit + 6);
+            filterCatalog(document.getElementById('catalog-search')?.value || '', false);
+            const revealedCard = Array.from(wrapper.querySelectorAll('.product-card-v5'))
+                .filter(card => card.style.display !== 'none')[previousLimit];
+            if (revealedCard) {
+                revealedCard.tabIndex = -1;
+                revealedCard.focus({ preventScroll: true });
+            }
+        });
+        wrapper.append(button);
+    });
+    filterCatalog('');
 
     // 7. Catalog Search Logic
     const searchInput = document.getElementById('catalog-search');
     const searchClearBtn = document.getElementById('search-clear-btn');
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase().trim();
-            if (searchClearBtn) {
-                searchClearBtn.style.display = query ? 'block' : 'none';
-            }
-            filterActiveCarousel(query);
+            filterCatalog(e.target.value);
         });
     }
 
@@ -156,6 +190,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+function getProductWhatsAppDetails(card) {
+    const specs = card.querySelector('.card-specs')?.textContent.trim() || '';
+    const capacity = card.querySelector('.card-capacity');
+    const parts = specs.split('|').map(part => part.trim());
+    const hasColor = Boolean(card.querySelector('.color-dot')) && parts.length > 1;
+    const lines = [];
+    if (hasColor) lines.push(`Cor: ${parts.pop()}`);
+    if (capacity) {
+        lines.push(`Capacidade: ${capacity.value || 'a definir'}`);
+    } else if (parts.join(' | ')) {
+        lines.push(`Características: ${parts.join(' | ')}`);
+    }
+    return lines;
+}
+
+function updateProductWhatsApp(card) {
+    const name = card.querySelector('.card-title')?.textContent.trim();
+    const lines = [
+        `Olá, Total Celulares! Gostaria de consultar o valor e a disponibilidade do ${name} que vi no site.`,
+        ...getProductWhatsAppDetails(card)
+    ];
+    const href = `https://wa.me/5511945401687?text=${encodeURIComponent(lines.join('\n'))}`;
+    card.querySelectorAll('.btn-consult').forEach(link => { link.href = href; });
+    updateFavoritesWhatsApp();
+}
+
 function resetCatalogSearch() {
     const searchInput = document.getElementById('catalog-search');
     const searchClearBtn = document.getElementById('search-clear-btn');
@@ -166,56 +226,57 @@ function resetCatalogSearch() {
     if (searchClearBtn) {
         searchClearBtn.style.display = 'none';
     }
-    filterActiveCarousel('');
+    filterCatalog('');
 }
 
-function filterActiveCarousel(query) {
-    const activeCarousel = document.querySelector('.carousel-wrapper.active');
-    if (!activeCarousel) return;
-
-    const cards = activeCarousel.querySelectorAll('.product-card-v5');
+function filterCatalog(query, resetLimit = true) {
+    const normalize = value => value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+    const search = normalize(query);
+    const wrappers = document.querySelectorAll('.carousel-wrapper');
     let visibleCount = 0;
 
-    cards.forEach(card => {
-        const title = card.querySelector('.card-title')?.innerText.toLowerCase() || '';
-        const tagline = card.querySelector('.card-tagline')?.innerText.toLowerCase() || '';
-        const specs = card.querySelector('.card-specs')?.innerText.toLowerCase() || '';
-        
-        if (!query || title.includes(query) || tagline.includes(query) || specs.includes(query)) {
-            card.style.display = 'flex';
-            visibleCount++;
-        } else {
-            card.style.display = 'none';
+    wrappers.forEach(wrapper => {
+        if (resetLimit) wrapper.dataset.visibleLimit = '6';
+        const limit = Number(wrapper.dataset.visibleLimit || 6);
+        let matches = 0;
+        wrapper.querySelectorAll('.product-card-v5').forEach(card => {
+            const fields = ['.card-title', '.card-tagline', '.card-specs'];
+            const matchesQuery = (!favoritesOnly || favoriteProducts.has(card.dataset.favoriteId)) && (!search || fields.some(selector =>
+                normalize(card.querySelector(selector)?.textContent || '').includes(search)
+            ));
+            if (matchesQuery) matches++;
+            card.style.display = matchesQuery && matches <= limit ? '' : 'none';
+        });
+        const moreButton = wrapper.querySelector('.catalog-show-more');
+        if (moreButton) {
+            moreButton.hidden = matches <= limit;
+            moreButton.textContent = `Ver mais (${Math.max(0, matches - limit)} restantes)`;
         }
+        visibleCount += matches;
+        // Clear inline visibility when browsing so only the selected tab is shown.
+        wrapper.style.display = search || favoritesOnly ? (matches ? 'block' : 'none') : '';
+        const container = wrapper.querySelector('.carousel-container');
+        if (container) container.scrollLeft = 0;
     });
 
+    const clearButton = document.getElementById('search-clear-btn');
+    if (clearButton) clearButton.style.display = search ? 'block' : 'none';
+    const status = document.getElementById('catalog-search-status');
+    if (status) status.textContent = search
+        ? `${visibleCount} ${visibleCount === 1 ? 'produto encontrado' : 'produtos encontrados'} ${favoritesOnly ? 'nos favoritos' : 'em todas as categorias'}.`
+        : '';
     const emptyState = document.getElementById('catalog-no-results');
     const emptyQuerySpan = document.getElementById('empty-search-query');
-    if (emptyState) {
-        if (visibleCount === 0 && query) {
-            emptyState.style.display = 'block';
-            if (emptyQuerySpan) emptyQuerySpan.innerText = query;
-            activeCarousel.style.display = 'none';
-        } else {
-            emptyState.style.display = 'none';
-            activeCarousel.style.display = 'block';
-        }
-    }
-}
-
-// Catalog Navigation Logic
-function scrollCarousel(carouselId, distance) {
-    const container = document.querySelector(`#${carouselId} .carousel-container`);
-    if (container) {
-        container.scrollBy({
-            left: distance,
-            behavior: 'smooth'
-        });
-    }
+    if (emptyState) emptyState.style.display = search && visibleCount === 0 ? 'block' : 'none';
+    if (emptyQuerySpan) emptyQuerySpan.textContent = query.trim();
+    const favoritesEmpty = document.getElementById('favorites-empty');
+    if (favoritesEmpty) favoritesEmpty.hidden = !(favoritesOnly && !search && visibleCount === 0);
 }
 
 // Catalog Brand Switch Logic
 function switchCarousel(brand) {
+    favoritesOnly = false;
+    syncFavoriteButtons();
     const wrappers = document.querySelectorAll('.carousel-wrapper');
     const tabs = document.querySelectorAll('.catalog-tab');
     
@@ -245,7 +306,7 @@ function switchCarousel(brand) {
     }
 
     // Re-apply search filter (now cleared, so all cards show)
-    filterActiveCarousel('');
+    filterCatalog('');
 }
 
 /**
@@ -284,6 +345,10 @@ function changeProductColor(el, imgSrc, bgClass, colorName) {
             specs.innerText = parts.join('|');
         }
     }
+    card.querySelectorAll('.color-dot').forEach(dot => {
+        dot.setAttribute('aria-pressed', String(dot === el));
+    });
+    updateProductWhatsApp(card);
 }
 
 /**

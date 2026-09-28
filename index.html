@@ -8,9 +8,9 @@
     <meta name="google-site-verification" content="RLej9VKFWf1T_XRtLE4dc-QylL33XzrRSnR_m9qS2M0" />
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -77,12 +77,16 @@
     <header id="header">
         <div class="container nav-container">
             <nav>
-                <a href="#" class="logo">
-                    <img src="img/logo.png" alt="Logo Total Celulares">
+                <a href="#home" class="logo">
+                    <img src="img/logo-90.png" alt="" width="45" height="45">
                     TOTAL<span> CELULARES</span>
                 </a>
                 
-                <ul class="nav-links">
+                <button type="button" class="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+
+                <ul class="nav-links" id="primary-navigation">
                     <li><a href="#home">Início</a></li>
                     <li><a href="#catalogo">Catálogo</a></li>
                     <li><a href="#troca">Troca Inteligente</a></li>
@@ -91,9 +95,6 @@
                     <li><a href="#contato">Contato</a></li>
                 </ul>
 
-                <div class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </div>
             </nav>
         </div>
     </header>
@@ -102,15 +103,15 @@
     <section class="hero" id="home">
         <div class="container hero-main-row">
             <div class="hero-content" data-reveal>
-                <h1>TOTAL<br><span>CELULARES</span></h1>
-                <p>Somos especialistas em Apple, oferecendo iPhones e acessórios de qualidade, com procedência garantida e atendimento diferenciado. Na Total Celulares, transformamos o sonho dos clientes em realidade, com destaque para iPhones novos e seminovos, sempre com confiança, transparência e tecnologia de ponta.</p>
+                <h1>O seu próximo celular <span>está aqui</span></h1>
+                <p>Encontre seu iPhone ou Xiaomi com procedência garantida. Aceitamos seu aparelho usado como parte do pagamento.</p>
                 <div class="hero-btns">
                     <a href="#catalogo" class="btn btn-primary">Ver Catálogo</a>
-                    <a href="https://wa.me/5511945401687" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Falar com Vendedor</a>
+                    <a href="https://wa.me/5511945401687?text=Ol%C3%A1%2C%20Total%20Celulares!%20Vim%20pelo%20site%20e%20gostaria%20de%20ajuda%20para%20escolher%20meu%20pr%C3%B3ximo%20celular." class="btn btn-outline" target="_blank" rel="noopener noreferrer">Falar com Vendedor</a>
                 </div>
             </div>
             <div class="hero-image" data-reveal>
-                <img src="img/hero.png" alt="Total Celulares Premium Hero">
+                <img src="img/hero-iphone-xiaomi.png" alt="iPhone e Xiaomi lado a lado sobre um fundo verde-escuro">
             </div>
         </div>
 
@@ -125,7 +126,7 @@
             <div class="section-title" data-reveal>
                 <h2>Catálogo <span>Total</span></h2>
                 <div class="underline"></div>
-                <p class="section-subtitle">Deslize para ver nossos modelos que trabalhamos</p>
+                <p class="section-subtitle">Explore os modelos e encontre seu próximo aparelho</p>
             </div>
 
             <div class="catalog-tabs">
@@ -140,11 +141,23 @@
             <div class="catalog-search-wrap" data-reveal>
                 <div class="search-box">
                     <i class="fas fa-search"></i>
-                    <input type="text" id="catalog-search" placeholder="Buscar modelo (ex: iPhone 17, MacBook, Watch...)" aria-label="Buscar produtos">
+                    <input type="text" id="catalog-search" placeholder="Buscar em todas as categorias..." aria-label="Buscar produtos em todas as categorias" aria-describedby="catalog-search-status">
                     <button type="button" id="search-clear-btn" class="search-clear-btn" aria-label="Limpar busca">
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
+            </div>
+
+            <p id="catalog-search-status" class="section-subtitle" role="status" aria-live="polite"></p>
+            <div class="catalog-favorites-toolbar">
+                <button type="button" id="favorites-filter" class="btn btn-outline" aria-pressed="false">Meus favoritos (0)</button>
+                <button type="button" id="compare-favorites" class="btn btn-outline" aria-haspopup="dialog">Comparar favoritos</button>
+                <a id="favorites-whatsapp" class="btn btn-primary" target="_blank" rel="noopener noreferrer" hidden><i class="fab fa-whatsapp" aria-hidden="true"></i> Enviar favoritos pelo WhatsApp</a>
+                <span id="favorites-status" role="status" aria-live="polite"></span>
+            </div>
+            <div id="favorites-empty" class="catalog-empty-state" hidden>
+                <h3>Nenhum favorito por aqui</h3>
+                <p>Toque no coração dos produtos para salvar os modelos que você quer comparar depois.</p>
             </div>
 
             <!-- Estado Vazio da Busca -->
@@ -157,8 +170,6 @@
 
             <!-- iPhone Carousel -->
             <div id="carousel-iphone" class="carousel-wrapper active">
-                <div class="nav-arrow nav-prev" role="button" tabindex="0" aria-label="Produto anterior" onclick="scrollCarousel('carousel-iphone', -340)"><i class="fas fa-chevron-left"></i></div>
-                <div class="nav-arrow nav-next" role="button" tabindex="0" aria-label="Próximo produto" onclick="scrollCarousel('carousel-iphone', 340)"><i class="fas fa-chevron-right"></i></div>
                 <div class="carousel-container">
                     <!-- iPhone 18 Pro Max -->
                     <div class="product-card-v5">
@@ -176,6 +187,15 @@
                             <h3 class="card-title">iPhone 18 Pro Max</h3>
                             <p class="card-tagline">O mais poderoso da linha com a maior tela, melhor bateria e sistema de câmeras mais avançado já criado. Para quem não aceita menos que o máximo.</p>
                             <p class="card-specs">256, 512 GB, 1 TB e 2 TB | Preto</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                    <option value="1 TB">1 TB</option>
+                                    <option value="2 TB">2 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -202,6 +222,15 @@
                             <h3 class="card-title">iPhone 18 Pro</h3>
                             <p class="card-tagline">Modelo premium com desempenho de elite e câmeras profissionais. Perfeito para criadores de conteúdo e usuários que exigem o melhor.</p>
                             <p class="card-specs">256, 512 GB, 1 TB e 2 TB | Glacial</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                    <option value="1 TB">1 TB</option>
+                                    <option value="2 TB">2 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -225,6 +254,15 @@
                             <h3 class="card-title">iPhone 18 Duo</h3>
                             <p class="card-tagline">Novidade da linha com design inovador e duas câmeras traseiras integradas. Equilíbrio perfeito entre tecnologia avançada e praticidade no dia a dia.</p>
                             <p class="card-specs">256, 512 GB, 1 TB e 2 TB | Branco Estrela</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                    <option value="1 TB">1 TB</option>
+                                    <option value="2 TB">2 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -250,6 +288,15 @@
                             <h3 class="card-title">iPhone 17 Pro Max</h3>
                             <p class="card-tagline">Topo da linha com melhor bateria, tela maior e conjunto de câmeras mais completo. Ideal para quem quer o melhor modelo disponível.</p>
                             <p class="card-specs">256, 512 GB, 1 TB e 2 TB | Azul Intenso</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                    <option value="1 TB">1 TB</option>
+                                    <option value="2 TB">2 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -275,6 +322,14 @@
                             <h3 class="card-title">iPhone 17 Pro</h3>
                             <p class="card-tagline">Modelo premium com alto desempenho e recursos avançados. Ideal para usuários exigentes e criadores de conteúdo.</p>
                             <p class="card-specs">256, 512 GB e 1 TB | Laranja Cósmico</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                    <option value="1 TB">1 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -302,6 +357,13 @@
                             <h3 class="card-title">iPhone 17</h3>
                             <p class="card-tagline">Modelo base da nova geração com melhorias em desempenho e eficiência. Ideal para quem quer um iPhone atualizado para uso geral.</p>
                             <p class="card-specs">256 e 512 GB | Azul Névoa</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -326,6 +388,14 @@
                             <h3 class="card-title">iPhone 17e</h3>
                             <p class="card-tagline">Versão mais acessível da linha, mantendo bom desempenho no dia a dia. Ideal para quem busca custo-benefício.</p>
                             <p class="card-specs">128, 256 e 512 GB | Rosa Pálido</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="128 GB">128 GB</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -351,6 +421,14 @@
                             <h3 class="card-title">iPhone 16 Pro Max</h3>
                             <p class="card-tagline">Topo da linha com máxima performance, maior bateria e sistema de câmeras mais completo da geração. Ideal para quem quer o melhor iPhone disponível.</p>
                             <p class="card-specs">256, 512 GB e 1 TB | Titânio Natural</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                    <option value="1 TB">1 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -376,6 +454,15 @@
                             <h3 class="card-title">iPhone 16 Pro</h3>
                             <p class="card-tagline">Modelo premium com alto desempenho, acabamento em titânio e câmeras avançadas. Ideal para usuários exigentes e criadores de conteúdo.</p>
                             <p class="card-specs">128, 256, 512 GB e 1 TB | Titânio Natural</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="128 GB">128 GB</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                    <option value="1 TB">1 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -402,6 +489,14 @@
                             <h3 class="card-title">iPhone 16 Plus</h3>
                             <p class="card-tagline">Versão com tela maior e bateria de longa duração, ideal para consumo de conteúdo. Ideal para quem busca mais autonomia e tela grande.</p>
                             <p class="card-specs">128, 256 e 512 GB | Rosa</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="128 GB">128 GB</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -429,6 +524,14 @@
                             <h3 class="card-title">iPhone 16</h3>
                             <p class="card-tagline">Modelo moderno com ótimo desempenho e câmeras aprimoradas para o dia a dia. Ideal para quem quer um iPhone atualizado e equilibrado.</p>
                             <p class="card-specs">128, 256 e 512 GB | Preto</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="128 GB">128 GB</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -452,6 +555,14 @@
                             <h3 class="card-title">iPhone 16e</h3>
                             <p class="card-tagline">Versão mais acessível da linha, com bom desempenho e experiência fluida. Ideal para quem busca custo-benefício em um modelo mais atual.</p>
                             <p class="card-specs">128, 256 e 512 GB | Preto</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="128 GB">128 GB</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -477,6 +588,14 @@
                             <h3 class="card-title">iPhone 15 Pro Max</h3>
                             <p class="card-tagline">Topo da linha com melhor câmera e desempenho da geração. Ideal para quem quer máxima performance e qualidade.</p>
                             <p class="card-specs">256, 512 GB e 1 TB | Titânio Preto</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                    <option value="1 TB">1 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -502,6 +621,15 @@
                             <h3 class="card-title">iPhone 15 Pro</h3>
                             <p class="card-tagline">Modelo premium com chip A17 Pro, acabamento em titânio e alto desempenho. Ideal para usuários exigentes e criadores de conteúdo.</p>
                             <p class="card-specs">128, 256, 512 GB e 1 TB | Titânio Preto</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="128 GB">128 GB</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                    <option value="1 TB">1 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -528,6 +656,14 @@
                             <h3 class="card-title">iPhone 15 Plus</h3>
                             <p class="card-tagline">Versão com tela maior e bateria de longa duração, ideal para uso prolongado. Ideal para quem busca mais autonomia e uma tela maior.</p>
                             <p class="card-specs">128, 256 e 512 GB | Azul</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="128 GB">128 GB</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -554,6 +690,14 @@
                             <h3 class="card-title">iPhone 15</h3>
                             <p class="card-tagline">Modelo moderno com câmera de 48 MP e excelente desempenho para o dia a dia. Ideal para quem quer um iPhone atualizado e confiável.</p>
                             <p class="card-specs">128, 256 e 512 GB | Preto</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="128 GB">128 GB</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -579,6 +723,15 @@
                             <h3 class="card-title">iPhone 14 Pro Max</h3>
                             <p class="card-tagline">Topo da linha com melhor bateria e desempenho da geração. Ideal para quem quer o melhor da linha 14.</p>
                             <p class="card-specs">128, 256, 512 GB e 1 TB | Roxo Profundo</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="128 GB">128 GB</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                    <option value="1 TB">1 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -604,6 +757,15 @@
                             <h3 class="card-title">iPhone 14 Pro</h3>
                             <p class="card-tagline">Modelo premium com chip A16, tela fluida e câmera de 48 MP para fotos e vídeos de alto nível. Ideal para usuários exigentes que querem mais desempenho e qualidade.</p>
                             <p class="card-specs">128, 256, 512 GB e 1 TB | Preto Espacial</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="128 GB">128 GB</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                    <option value="1 TB">1 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -631,6 +793,14 @@
                             <h3 class="card-title">iPhone 14 Plus</h3>
                             <p class="card-tagline">Versão com tela maior e bateria de longa duração, ideal para consumo de conteúdo. Ideal para quem busca tela grande e bateria duradoura.</p>
                             <p class="card-specs">128, 256 e 512 GB | Azul</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="128 GB">128 GB</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -658,6 +828,14 @@
                             <h3 class="card-title">iPhone 14</h3>
                             <p class="card-tagline">Modelo moderno com ótimo desempenho e excelente experiência no dia a dia. Ideal para quem quer um iPhone atual com bom custo-benefício.</p>
                             <p class="card-specs">128, 256 e 512 GB | Meia-noite</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="128 GB">128 GB</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -684,6 +862,15 @@
                             <h3 class="card-title">iPhone 13 Pro Max</h3>
                             <p class="card-tagline">Topo da linha com maior bateria e desempenho máximo da geração. Ideal para quem quer máximo desempenho e autonomia.</p>
                             <p class="card-specs">128, 256, 512 GB e 1 TB | Azul Sierra</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="128 GB">128 GB</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                    <option value="1 TB">1 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -710,6 +897,15 @@
                             <h3 class="card-title">iPhone 13 Pro</h3>
                             <p class="card-tagline">Modelo premium com tela ProMotion e câmeras avançadas para fotos e vídeos de alta qualidade. Ideal para usuários avançados e criadores de conteúdo.</p>
                             <p class="card-specs">128, 256, 512 GB e 1 TB | Grafite</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="128 GB">128 GB</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                    <option value="1 TB">1 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -737,6 +933,14 @@
                             <h3 class="card-title">iPhone 13</h3>
                             <p class="card-tagline">Modelo equilibrado com chip A15 Bionic, oferecendo ótimo desempenho e fluidez no uso diário. Ideal para quem quer economizar sem abrir mão de performance.</p>
                             <p class="card-specs">128, 256 e 512 GB | Meia-noite</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="128 GB">128 GB</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -762,6 +966,14 @@
                             <h3 class="card-title">iPhone 12 Pro Max</h3>
                             <p class="card-tagline">Topo da linha com melhor câmera e maior autonomia de bateria da geração. Ideal para quem busca melhor desempenho dentro da linha 12.</p>
                             <p class="card-specs">128, 256 e 512 GB | Azul Pacífico</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="128 GB">128 GB</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -787,6 +999,14 @@
                             <h3 class="card-title">iPhone 12 Pro</h3>
                             <p class="card-tagline">Modelo premium com acabamento refinado e câmeras mais avançadas para fotos de alta qualidade. Ideal para quem quer melhor construção e qualidade em fotos.</p>
                             <p class="card-specs">128, 256 e 512 GB | Grafite</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="128 GB">128 GB</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -814,6 +1034,14 @@
                             <h3 class="card-title">iPhone 12</h3>
                             <p class="card-tagline">Conta com chip A14 Bionic, tela OLED e suporte ao 5G, oferecendo bom desempenho e qualidade de imagem. Ideal para quem quer um iPhone acessível para uso básico e intermediário.</p>
                             <p class="card-specs">64, 128 e 256 GB | Preto</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="64 GB">64 GB</option>
+                                    <option value="128 GB">128 GB</option>
+                                    <option value="256 GB">256 GB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                                 <span><i class="fas fa-sync-alt" aria-hidden="true"></i> Aceitamos seu usado na troca</span>
@@ -829,8 +1057,6 @@
 
             <!-- iPad Carousel -->
             <div id="carousel-ipad" class="carousel-wrapper">
-                <div class="nav-arrow nav-prev" role="button" tabindex="0" aria-label="Produto anterior" onclick="scrollCarousel('carousel-ipad', -340)"><i class="fas fa-chevron-left"></i></div>
-                <div class="nav-arrow nav-next" role="button" tabindex="0" aria-label="Próximo produto" onclick="scrollCarousel('carousel-ipad', 340)"><i class="fas fa-chevron-right"></i></div>
                 <div class="carousel-container">
                     <!-- iPad Pro de 13 pol. (M5) -->
                     <div class="product-card-v5">
@@ -845,6 +1071,15 @@
                             <h3 class="card-title">iPad Pro 13" (M5)</h3>
                             <p class="card-tagline">O auge da tecnologia de displays. Tela Ultra Retina XDR Tandem OLED avançada e a potência insuperável do novíssimo chip M5.</p>
                             <p class="card-specs">256GB, 512GB, 1TB e 2TB | Preto-espacial</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                    <option value="1 TB">1 TB</option>
+                                    <option value="2 TB">2 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                             </div>
@@ -867,6 +1102,15 @@
                             <h3 class="card-title">iPad Pro 11" (M5)</h3>
                             <p class="card-tagline">Desempenho incomparável em um design ultraportátil. Tela Ultra Retina XDR Tandem OLED e chip M5 de última geração.</p>
                             <p class="card-specs">256GB, 512GB, 1TB e 2TB | Preto-espacial</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                    <option value="1 TB">1 TB</option>
+                                    <option value="2 TB">2 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                             </div>
@@ -891,6 +1135,15 @@
                             <h3 class="card-title">iPad Pro 13" (M4)</h3>
                             <p class="card-tagline">O iPad mais fino de todos os tempos. Tela Ultra Retina XDR com Tandem OLED e desempenho incrível com o chip M4.</p>
                             <p class="card-specs">128GB, 256GB, 512GB e 1TB | Cinza-espacial</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="128 GB">128 GB</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                    <option value="1 TB">1 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                             </div>
@@ -915,6 +1168,15 @@
                             <h3 class="card-title">iPad Pro 11" (M4)</h3>
                             <p class="card-tagline">Poder e portabilidade extrema. Tela Ultra Retina XDR Tandem OLED, design ultrafino e chip M4.</p>
                             <p class="card-specs">128GB, 256GB, 512GB e 1TB | Cinza-espacial</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="128 GB">128 GB</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                    <option value="1 TB">1 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                             </div>
@@ -939,6 +1201,14 @@
                             <h3 class="card-title">iPad mini (A17 Pro)</h3>
                             <p class="card-tagline">Ultraportátil e ultrapoderoso. Design que cabe na mão, tela Liquid Retina de 8,3 polegadas e chip A17 Pro para alto desempenho.</p>
                             <p class="card-specs">128GB, 256GB e 512GB | Cinza-espacial</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="128 GB">128 GB</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                             </div>
@@ -963,6 +1233,14 @@
                             <h3 class="card-title">iPad (A16)</h3>
                             <p class="card-tagline">Colorido, versátil e ideal para o dia a dia. Tela Liquid Retina de 10,9 polegadas, chip A16 Bionic e compatibilidade com Apple Pencil.</p>
                             <p class="card-specs">128GB, 256GB e 512GB | Prateado</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="128 GB">128 GB</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                             </div>
@@ -976,8 +1254,6 @@
 
             <!-- Mac Carousel -->
             <div id="carousel-mac" class="carousel-wrapper">
-                <div class="nav-arrow nav-prev" role="button" tabindex="0" aria-label="Produto anterior" onclick="scrollCarousel('carousel-mac', -340)"><i class="fas fa-chevron-left"></i></div>
-                <div class="nav-arrow nav-next" role="button" tabindex="0" aria-label="Próximo produto" onclick="scrollCarousel('carousel-mac', 340)"><i class="fas fa-chevron-right"></i></div>
                 <div class="carousel-container">
 
                     <!-- MacBook Neo (A18 Pro) -->
@@ -995,6 +1271,13 @@
                             <h3 class="card-title">MacBook Neo (A18 Pro)</h3>
                             <p class="card-tagline">O MacBook mais colorido e inovador. Design ultrafino com o poderoso chip A18 Pro e tela Liquid Retina vibrante.</p>
                             <p class="card-specs">256GB e 512GB SSD | Prateado</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                             </div>
@@ -1019,6 +1302,13 @@
                             <h3 class="card-title">MacBook Air 13" (M5)</h3>
                             <p class="card-tagline">Incrivelmente fino, leve e silencioso. O chip M5 entrega performance excepcional com até 18 horas de bateria.</p>
                             <p class="card-specs">256GB e 512GB SSD | Meia-noite</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                             </div>
@@ -1043,6 +1333,13 @@
                             <h3 class="card-title">MacBook Air 15" (M5)</h3>
                             <p class="card-tagline">A tela Liquid Retina de 15,3" em um chassis elegante e ultrafino. Todo o poder do M5 para produtividade em grande formato.</p>
                             <p class="card-specs">256GB e 512GB SSD | Meia-noite</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                             </div>
@@ -1065,6 +1362,13 @@
                             <h3 class="card-title">MacBook Pro 14" (M5)</h3>
                             <p class="card-tagline">Poderoso e portátil. A tela Liquid Retina XDR de 14,2" e o chip M5 entregam desempenho profissional incomparável.</p>
                             <p class="card-specs">512GB e 1TB SSD | Preto-espacial</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="512 GB">512 GB</option>
+                                    <option value="1 TB">1 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                             </div>
@@ -1087,6 +1391,13 @@
                             <h3 class="card-title">MacBook Pro 14" (M5 Pro)</h3>
                             <p class="card-tagline">Nível profissional em formato compacto. O chip M5 Pro com CPU de até 14 núcleos garante performance para os projetos mais exigentes.</p>
                             <p class="card-specs">512GB e 1TB SSD | Preto-espacial</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="512 GB">512 GB</option>
+                                    <option value="1 TB">1 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                             </div>
@@ -1109,6 +1420,13 @@
                             <h3 class="card-title">MacBook Pro 14" (M5 Max)</h3>
                             <p class="card-tagline">O máximo de performance em 14 polegadas. O chip M5 Max com GPU de até 40 núcleos para workloads de alto nível.</p>
                             <p class="card-specs">1TB e 2TB SSD | Preto-espacial</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="1 TB">1 TB</option>
+                                    <option value="2 TB">2 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                             </div>
@@ -1131,6 +1449,13 @@
                             <h3 class="card-title">MacBook Pro 16" (M5 Pro)</h3>
                             <p class="card-tagline">A tela Liquid Retina XDR de 16,2" com ProMotion e o chip M5 Pro. A estação de trabalho portátil definitiva.</p>
                             <p class="card-specs">512GB e 1TB SSD | Preto-espacial</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="512 GB">512 GB</option>
+                                    <option value="1 TB">1 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                             </div>
@@ -1153,6 +1478,13 @@
                             <h3 class="card-title">MacBook Pro 16" (M5 Max)</h3>
                             <p class="card-tagline">Poder absoluto para criação e computação intensiva. O chip M5 Max com GPU de 40 núcleos e até 128GB de memória unificada.</p>
                             <p class="card-specs">1TB e 2TB SSD | Preto-espacial</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="1 TB">1 TB</option>
+                                    <option value="2 TB">2 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                             </div>
@@ -1171,6 +1503,13 @@
                             <h3 class="card-title">Mac mini (M4)</h3>
                             <p class="card-tagline">Compacto, silencioso e surpreendentemente rápido. O Mac mais acessível com chip M4 e conectividade Thunderbolt 4 e USB 3.</p>
                             <p class="card-specs">256GB e 512GB SSD | Prateado</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                             </div>
@@ -1189,6 +1528,13 @@
                             <h3 class="card-title">Mac mini (M4 Pro)</h3>
                             <p class="card-tagline">Desktop profissional ultra-compacto. O chip M4 Pro com CPU de até 14 núcleos e conectividade Thunderbolt 5 para exigências máximas.</p>
                             <p class="card-specs">512GB e 1TB SSD | Prateado</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="512 GB">512 GB</option>
+                                    <option value="1 TB">1 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                             </div>
@@ -1207,6 +1553,14 @@
                             <h3 class="card-title">Mac Studio (M4 Max)</h3>
                             <p class="card-tagline">Estação de trabalho compacta e extraordinariamente potente. Chip M4 Max com GPU de 40 núcleos e até 128GB de memória unificada.</p>
                             <p class="card-specs">512GB, 1TB e 2TB SSD | Prateado</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="512 GB">512 GB</option>
+                                    <option value="1 TB">1 TB</option>
+                                    <option value="2 TB">2 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                             </div>
@@ -1225,6 +1579,14 @@
                             <h3 class="card-title">Mac Studio (M3 Ultra)</h3>
                             <p class="card-tagline">O poder de um Mac Pro em formato compacto. Chip M3 Ultra com até 80 núcleos de GPU e 192GB de memória unificada para workloads extremos.</p>
                             <p class="card-specs">1TB, 2TB e 4TB SSD | Prateado</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="1 TB">1 TB</option>
+                                    <option value="2 TB">2 TB</option>
+                                    <option value="4 TB">4 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                             </div>
@@ -1252,6 +1614,13 @@
                             <h3 class="card-title">iMac (M4, duas portas)</h3>
                             <p class="card-tagline">Design ultra-slim e vibrante em 7 cores. Tela Retina 4.5K de 24 polegadas e chip M4 para um desktop elegante e poderoso.</p>
                             <p class="card-specs">256GB e 512GB SSD | Prateado</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="256 GB">256 GB</option>
+                                    <option value="512 GB">512 GB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                             </div>
@@ -1279,6 +1648,13 @@
                             <h3 class="card-title">iMac (M4, quatro portas)</h3>
                             <p class="card-tagline">Toda a elegância do iMac com conectividade completa. Tela Retina 4.5K, chip M4 e 4 portas Thunderbolt para o usuário mais exigente.</p>
                             <p class="card-specs">512GB e 1TB SSD | Prateado</p>
+                            <label class="card-capacity-label">Capacidade
+                                <select class="card-capacity">
+                                    <option value="">Escolher capacidade</option>
+                                    <option value="512 GB">512 GB</option>
+                                    <option value="1 TB">1 TB</option>
+                                </select>
+                            </label>
                             <div class="card-purchase-benefits">
                                 <span><i class="far fa-credit-card" aria-hidden="true"></i> Em até 18x no cartão</span>
                             </div>
@@ -1294,8 +1670,6 @@
 
             <!-- Apple Watch Carousel -->
             <div id="carousel-watch" class="carousel-wrapper">
-                <div class="nav-arrow nav-prev" role="button" tabindex="0" aria-label="Produto anterior" onclick="scrollCarousel('carousel-watch', -340)"><i class="fas fa-chevron-left"></i></div>
-                <div class="nav-arrow nav-next" role="button" tabindex="0" aria-label="Próximo produto" onclick="scrollCarousel('carousel-watch', 340)"><i class="fas fa-chevron-right"></i></div>
                 <div class="carousel-container">
                     <!-- Apple Watch Ultra 4 -->
                     <div class="product-card-v5">
@@ -1471,8 +1845,6 @@
 
             <!-- AirPods Carousel -->
             <div id="carousel-airpods" class="carousel-wrapper">
-                <div class="nav-arrow nav-prev" role="button" tabindex="0" aria-label="Produto anterior" onclick="scrollCarousel('carousel-airpods', -340)"><i class="fas fa-chevron-left"></i></div>
-                <div class="nav-arrow nav-next" role="button" tabindex="0" aria-label="Próximo produto" onclick="scrollCarousel('carousel-airpods', 340)"><i class="fas fa-chevron-right"></i></div>
                 <div class="carousel-container">
                     <!-- AirPods Pro 3 -->
                     <div class="product-card-v5">
@@ -1591,8 +1963,6 @@
 
             <!-- Acessórios Carousel -->
             <div id="carousel-acessorios" class="carousel-wrapper">
-                <div class="nav-arrow nav-prev" role="button" tabindex="0" aria-label="Produto anterior" onclick="scrollCarousel('carousel-acessorios', -340)"><i class="fas fa-chevron-left"></i></div>
-                <div class="nav-arrow nav-next" role="button" tabindex="0" aria-label="Próximo produto" onclick="scrollCarousel('carousel-acessorios', 340)"><i class="fas fa-chevron-right"></i></div>
                 <div class="carousel-container">
 
                     <!-- Bateria MagSafe para iPhone Air -->
@@ -1712,6 +2082,17 @@
     <div class="section-divider"></div>
 
     <!-- Serviços -->
+
+    <section id="recently-viewed" aria-labelledby="recently-viewed-title" hidden>
+        <div class="container">
+            <div class="recently-viewed-heading">
+                <h2 id="recently-viewed-title">Vistos recentemente</h2>
+                <button type="button" id="clear-viewed-products" class="btn btn-outline">Limpar histórico</button>
+            </div>
+            <p>Reencontre os últimos produtos que você abriu.</p>
+            <ul id="recently-viewed-list"></ul>
+        </div>
+    </section>
 
     <!-- Troca Inteligente -->
     <section id="troca" aria-labelledby="trade-title">
@@ -2009,7 +2390,7 @@
             <p class="contact-intro">Estamos prontos para te atender. Escolha o melhor jeito:</p>
             
             <div class="contact-channels">
-                <a href="https://wa.me/5511945401687" target="_blank" rel="noopener noreferrer" class="contact-btn contact-btn-whatsapp">
+                <a href="https://wa.me/5511945401687?text=Ol%C3%A1%2C%20Total%20Celulares!%20Vim%20pela%20se%C3%A7%C3%A3o%20de%20contato%20do%20site%20e%20gostaria%20de%20falar%20com%20a%20equipe." target="_blank" rel="noopener noreferrer" class="contact-btn contact-btn-whatsapp">
                     <i class="fab fa-whatsapp"></i> WhatsApp
                 </a>
                 <a href="https://www.instagram.com/totalcelulares1?igsh=MTBzczU4NzM3bXF2Zg==" target="_blank" rel="noopener noreferrer" class="contact-btn contact-btn-instagram">
@@ -2064,8 +2445,8 @@
                         Conectando você ao melhor da tecnologia Apple. Sua loja de confiança no coração de São Paulo para iPhones e acessórios premium.
                     </p>
                     <div class="footer-socials">
-                        <a href="https://www.instagram.com/totalcelulares1?igsh=MTBzczU4NzM3bXF2Zg==" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/5511945401687" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/totalcelulares1?igsh=MTBzczU4NzM3bXF2Zg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Total Celulares"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://wa.me/5511945401687?text=Ol%C3%A1%2C%20Total%20Celulares!%20Encontrei%20os%20contatos%20no%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20loja%20e%20o%20atendimento." target="_blank" rel="noopener noreferrer" aria-label="Falar com a Total Celulares pelo WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
                     </div>
                 </div>
 
@@ -2138,11 +2519,40 @@
     </div>
 
     <!-- Botão Flutuante WhatsApp -->
-    <a href="https://wa.me/5511945401687" class="floating-whatsapp" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-whatsapp"></i>
+    <a href="https://wa.me/5511945401687?text=Ol%C3%A1%2C%20Total%20Celulares!%20Estou%20navegando%20no%20site%20e%20preciso%20de%20ajuda." class="floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Falar com a Total Celulares pelo WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
 
+    <dialog id="product-photo-dialog" aria-labelledby="product-photo-title">
+        <div class="product-photo-panel">
+            <div class="product-photo-heading">
+                <h2 id="product-photo-title"></h2>
+                <button type="button" id="product-photo-close" aria-label="Fechar foto ampliada" autofocus><i class="fas fa-times" aria-hidden="true"></i></button>
+            </div>
+            <img id="product-photo-preview" alt="">
+            <p id="product-photo-caption" aria-live="polite"></p>
+            <div id="product-photo-colors" role="group" aria-label="Cores do produto"></div>
+        </div>
+    </dialog>
+
+    <dialog id="comparison-dialog" aria-labelledby="comparison-title">
+        <div class="comparison-panel">
+            <div class="product-photo-heading">
+                <h2 id="comparison-title">Compare seus favoritos</h2>
+                <button type="button" id="comparison-close" aria-label="Fechar comparação" autofocus>Fechar</button>
+            </div>
+            <div id="comparison-choices"></div>
+            <p id="comparison-message" role="status"></p>
+            <div id="comparison-content" tabindex="0" role="region" aria-label="Tabela de comparação"></div>
+        </div>
+    </dialog>
+
     <!-- Scripts -->
+    <script src="favorites.js"></script>
     <script src="script.js"></script>
+    <script src="history.js"></script>
+    <script src="sharing.js"></script>
+    <script src="product-photos.js"></script>
+    <script src="comparison.js"></script>
 </body>
 </html>
