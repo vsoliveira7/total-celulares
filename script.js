@@ -86,9 +86,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Smooth Scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+            const target = document.getElementById(this.hash.slice(1));
             if (target) {
+                e.preventDefault();
                 target.scrollIntoView({
                     behavior: 'smooth'
                 });
@@ -317,14 +318,11 @@ function changeProductColor(el, imgSrc, bgClass, colorName) {
     const card = el.closest('.product-card-v5');
     if (!card) return;
 
-    // 1. Update Image with a subtle fade effect
+    // Keep the photo in sync with the selected color, including when a dialog
+    // or comparison is opened immediately after the selection.
     const img = card.querySelector('.card-image-wrap img');
     if (img) {
-        img.style.opacity = '0';
-        setTimeout(() => {
-            img.src = imgSrc;
-            img.style.opacity = '1';
-        }, 150);
+        img.src = imgSrc;
     }
 
     // 2. Update Background Wrap class
@@ -392,6 +390,15 @@ const legalContents = {
     }
 };
 
+let legalPreviousOverflow = '';
+
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('legal-modal');
+    modal.addEventListener('close', () => {
+        document.body.style.overflow = legalPreviousOverflow;
+    });
+});
+
 function openLegalModal(type) {
     const data = legalContents[type];
     if (!data) return;
@@ -403,17 +410,17 @@ function openLegalModal(type) {
     if (modal && titleEl && bodyEl) {
         titleEl.innerText = data.title;
         bodyEl.innerHTML = data.body;
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        if (!modal.open) {
+            legalPreviousOverflow = document.body.style.overflow;
+            modal.showModal();
+            document.body.style.overflow = 'hidden';
+        }
     }
 }
 
 function closeLegalModal() {
     const modal = document.getElementById('legal-modal');
-    if (modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
+    if (modal?.open) modal.close();
 }
 
 

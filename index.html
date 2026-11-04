@@ -2507,7 +2507,7 @@
     </footer>
 
     <!-- Modal Informativo Legal -->
-    <div id="legal-modal" class="modal-overlay" onclick="if(event.target===this)closeLegalModal()" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <dialog id="legal-modal" class="modal-overlay" onclick="if(event.target===this)closeLegalModal()" aria-labelledby="modal-title">
         <div class="modal-box">
             <div class="modal-header">
                 <h3 id="modal-title">Informações</h3>
@@ -2517,7 +2517,7 @@
             </div>
             <div id="modal-body" class="modal-body"></div>
         </div>
-    </div>
+    </dialog>
 
     <!-- Botão Flutuante WhatsApp -->
     <a href="https://wa.me/5511945401687?text=Ol%C3%A1%2C%20Total%20Celulares!%20Estou%20navegando%20no%20site%20e%20preciso%20de%20ajuda." class="floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Falar com a Total Celulares pelo WhatsApp">
